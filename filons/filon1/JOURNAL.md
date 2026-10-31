@@ -165,3 +165,10 @@ CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 
 - Univers : TOUS les jetons créés dans les fenêtres 30/10 00-03 h et 30/10 12-15 h (cache momentum_*), pas seulement les gagnants.
 - Sorties : +60 %/120 s, +100 %/600 s, stop suiveur 30 % (sinon prix à 24 h), garder 1 h, garder 24 h. Net : frais PancakeSwap V2 0,25 % x 2 + taxe du jeton (lue) x 2.
 - Critère : rentable si « sans top 3 » > 1 sur les 2 fenêtres réunies ET sur chacune ; n >= 10 migrations par fenêtre, sinon « échantillon trop petit ».
+
+## 23:07 — Résultat H9 (migrations Flap) — `scripts/migrations_flap.txt`
+- 13 migrations sur 1 896 jetons (6 sur 796 le 30/10 00-03 h ; 7 sur 1 100 le 30/10 12-15 h). Sous le seuil fixé (n >= 10 par fenêtre) : échantillon trop petit pour conclure formellement.
+- Mais tout est négatif. Réunies, net moyen : +60 %/120 s x0,794 ; +100 %/600 s x0,699 ; stop 30 % x0,767 ; garder 1 h x0,683 ; garder 24 h x0,803. Sans top 3 : x0,13 à x0,63.
+- Aucun signe de l'effet « +19,6 % » des migrations pump.fun de septembre. Le script `migrations_flap.py` est prêt pour un plus grand échantillon (RPC BSC à soi : le public ne garde que ~3 jours).
+
+## 23:08 — Fin de la fenêtre de 4 h (départ 19:20). Rien de rentable trouvé sur chiffres sourcés.

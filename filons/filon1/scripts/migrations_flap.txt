@@ -1,0 +1,19 @@
+H9 migrations Flap -> pool DEX V2 ; net de frais 0,25 % x 2 et taxes lues ; poussière < 5 $ ignorée pour les plus hauts.
+momentum_2026-10-30T00.json : 796 jetons, 6 migrés, 6 mesurés (pool avec liquidité).
+   F_60_120s   n=6 net moyen x1.067 | sans top3 x0.575 | part > 1 : 3 sur 6
+   F_100_600s  n=6 net moyen x0.914 | sans top3 x0.296 | part > 1 : 2 sur 6
+   T_trail30   n=6 net moyen x0.867 | sans top3 x0.700 | part > 1 : 1 sur 6
+   H_1h        n=6 net moyen x0.774 | sans top3 x0.069 | part > 1 : 2 sur 6
+   H_24h       n=6 net moyen x0.231 | sans top3 x0.057 | part > 1 : 0 sur 6
+momentum_2026-10-30T12.json : 1100 jetons, 7 migrés, 7 mesurés (pool avec liquidité).
+   F_60_120s   n=7 net moyen x0.559 | sans top3 x0.297 | part > 1 : 1 sur 7
+   F_100_600s  n=7 net moyen x0.515 | sans top3 x0.146 | part > 1 : 1 sur 7
+   T_trail30   n=7 net moyen x0.680 | sans top3 x0.472 | part > 1 : 1 sur 7
+   H_1h        n=7 net moyen x0.605 | sans top3 x0.087 | part > 1 : 2 sur 7
+   H_24h       n=7 net moyen x1.293 | sans top3 x0.067 | part > 1 : 1 sur 7
+Deux fenêtres réunies :
+   F_60_120s   n=13 net moyen x0.794 | sans top3 x0.564
+   F_100_600s  n=13 net moyen x0.699 | sans top3 x0.322
+   T_trail30   n=13 net moyen x0.767 | sans top3 x0.627
+   H_1h        n=13 net moyen x0.683 | sans top3 x0.240
+   H_24h       n=13 net moyen x0.803 | sans top3 x0.133

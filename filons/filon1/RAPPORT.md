@@ -78,6 +78,7 @@ Datés mais pas des lieux neufs : Base Denim le 05/11 (blocs 200 ms) ; Initia re
   - Observable à l'entrée (nouveau créateur, taxe <= 1 %, dev a acheté, >= 2 tx aux blocs 0-2, combinaisons) : **aucune case** ne tient. Meilleure (dev >= 5 $ -> +100 %/600 s) : x0,992 et x0,962 net, donc perte.
   - Seule case gagnante sur les 2 fenêtres : sélection « actif >= 220 $ » (F_100_600s sans top 3 x1,175 et x1,102). Mais « actif » = achats sur 24 h = information du futur ; inconnue au bloc +2, et l'attendre déplace l'entrée. Piège, pas une stratégie.
 - « N'acheter que ceux qui décollent déjà » (entrée à 1, 3 ou 10 min si 200 à 3 000 $ déjà achetés, 4 sorties, 2 fenêtres, `momentum_flap.txt`) : 0 case sur 36 ne tient ; au mieux x0,94 à x0,96 net. Les décollages retombent dans l'heure.
+- Acheter à la migration vers le DEX (équivalent des migrations pump.fun, `migrations_flap.txt`) : 13 migrations sur 1 896 jetons, toutes sorties négatives (x0,68 à x0,80 net) ; échantillon trop petit pour conclure, aucun signe positif.
 - x10, x100, tenir 7 j : non mesurés (RPC public BSC ne sert que ~3 jours de logs).
 - Verdict : réel mais **pas de fenêtre à l'aveugle**. Rejeté sur chiffres sourcés et test croisé 2 fenêtres.
 
