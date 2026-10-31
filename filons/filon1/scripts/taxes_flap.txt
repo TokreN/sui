@@ -1,0 +1,9 @@
+Taxes Flap lues via Portal.getTokenV8Safe (0x62fafcca), bloc latest.
+flap_3010 : taxes lues pour 778 sur 778 jetons ; (achat, vente) en points de base les plus fréquents : (900, 900) 380, (400, 400) 105, (300, 300) 68, (200, 200) 67, (100, 100) 55
+  tous : n 778 ; +60 %/120 s brut x1.005 ; net de frais et taxes x0.869 ; net sans top 3 x0.867
+  nouveau créateur : n 97 ; +60 %/120 s brut x1.028 ; net de frais et taxes x0.951 ; net sans top 3 x0.932
+  créateur déjà vu : n 681 ; +60 %/120 s brut x1.001 ; net de frais et taxes x0.858 ; net sans top 3 x0.855
+flap_2910 : taxes lues pour 490 sur 490 jetons ; (achat, vente) en points de base les plus fréquents : (900, 900) 206, (300, 300) 72, (400, 400) 57, (100, 100) 51, (1000, 1000) 35
+  tous : n 490 ; +60 %/120 s brut x1.012 ; net de frais et taxes x0.882 ; net sans top 3 x0.878
+  nouveau créateur : n 99 ; +60 %/120 s brut x1.052 ; net de frais et taxes x0.983 ; net sans top 3 x0.965
+  créateur déjà vu : n 391 ; +60 %/120 s brut x1.002 ; net de frais et taxes x0.856 ; net sans top 3 x0.851

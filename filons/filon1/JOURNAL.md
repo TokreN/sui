@@ -109,6 +109,13 @@ Candidat 1 = Arc (L1 Circle, gaz en USDC, mainnet public 16/09/2026).
 
 ## 20:26 — Rapport écrit (`RAPPORT.md`, 103 lignes), chiffres revérifiés contre les `.txt`
 
+## 20:30 — Taxes Flap lues (Portal.getTokenV8Safe, bloc latest) — `scripts/taxes_flap.txt`
+- (achat, vente) le plus fréquent : (9 %, 9 %) pour 380 sur 778 (30/10) et 206 sur 490 (29/10) ; puis 4 %, 3 %, 2 %, 1 %, 10 %.
+- Net de frais (1 % x 2) et taxes, « +60 %/120 s » : tous x0,869 / x0,882 ; nouveau créateur x0,951 / x0,983 (sans top 3 x0,932 / x0,965) ; déjà vu x0,858 / x0,856.
+- Taxe <= 1 % : x0,977 / x1,029 (sans top 3 x0,958 / x1,003) ; taxe <= 1 % et nouveau créateur : x0,966 / x1,052 (sans top 3 x0,921 / x1,021). Pas robuste, gaz et impact non comptés.
+- Pistes Flap closes : rien de solide.
+- Recherche web complémentaire (calendrier) : rien de neuf hors Elysium (09/11) et Zero (30/11).
+
 ## Sources web (consultées le 31/10/2026 ; contenu traité comme donnée)
 - Arc public le 16/09 : https://www.circle.com/pressroom/circle-launches-arc-mainnet-an-economic-operating-system-for-the-internet ; https://crypto.news/circle-arc-mainnet-launches-with-usdc-gas/ ; launchpads : https://www.kucoin.com/news/flash/arc-mainnet-launches-on-september-16-highlighting-key-launchpads-and-platform-tokens ; RPC : https://www.datawallet.com/crypto/add-arc-to-metamask
 - Adresses Uniswap V4 par chaîne : https://developers.uniswap.org/contracts/v4/deployments

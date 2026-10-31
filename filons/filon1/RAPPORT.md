@@ -3,7 +3,7 @@
 Sources : [L] DefiLlama 31/10 ; [G] GeckoTerminal 31/10 (nouveaux pools sur ~3 j) ; [R] mes mesures RPC, détail dans `scripts/*.txt` ; [W] web, liens dans `JOURNAL.md`.
 
 ## 1. Pour Walid
-1. Rien de neuf n'est à la fois chaud et armable. Arc (public le 16/09) et Flap.sh (BSC) passent la règle de chaleur. Mais Arc est une flotte qui fabrique le volume puis retire la LP (4 690 pools sur 6 151 en ~4,5 min), et Flap ne rend rien à l'entrée aveugle (x1,005 et x1,012 avant frais).
+1. Rien de neuf n'est à la fois chaud et armable. Arc (public le 16/09) et Flap.sh (BSC) passent la règle de chaleur. Mais Arc est une flotte qui fabrique le volume puis retire la LP (4 690 pools sur 6 151 en ~4,5 min), et Flap ne rend rien à l'entrée aveugle (x0,87 à x0,88 net, taxes de 9 % le plus souvent).
 2. Prépare Elysium (09/11, déjà fait) et Zero de LayerZero (30/11, seule autre chaîne neuve datée) : ZRO pour le gaz, `mesure_v4.py` / `mesure_v2.py` prêts, RPC officiel le jour J. Attente faible : Arc, L1 institutionnelle comparable, n'a fait que 1,0 % de x10 au lancement, autant qu'à J+30.
 3. Avant le 09/11 pour Elysium, avant le 30/11 pour Zero. Sur Elysium, guette les contrats 0x49151b65…06bd et 0xb4a9c4e6…240a : ce sont eux qui fabriquent les mooners de HyperSwap V2.
 
@@ -11,7 +11,7 @@ Sources : [L] DefiLlama 31/10 ; [G] GeckoTerminal 31/10 (nouveaux pools sur ~3 j
 | Lieu | Né le | Lancements actifs / j | Créateurs | x5 / j | Volume / j | 7 j / 30 j | Verdict |
 |---|---|---|---|---|---|---|---|
 | Arc (L1 Circle, gaz USDC) | public 16/09/2026 | 384 à 741 [R 23-30/10] | 380 à 733 / j | 0 à 5 [R] | DEX 25,4 M$ [L] | 0,76 | CHAUD par la règle, mais flotte + LP retirée (76 %) : rejeté |
-| Flap.sh (BSC) | 2024 (Portal v5) | ~300 à 500 (62 et 38 en 3 h) [R 29-30/10] | ~100 pour 650 à 1 100 jetons / 3 h | ~24 à 40 (minorant) [R] | frais 686 k$ [L] | 0,75 | CHAUD, activité réelle, pas de fenêtre à l'aveugle : à suivre |
+| Flap.sh (BSC) | 2024 (Portal v5) | ~300 à 500 (62 et 38 en 3 h) [R 29-30/10] | ~100 pour 650 à 1 100 jetons / 3 h | ~24 à 40 (minorant) [R] | frais 686 k$ [L] | 0,75 | CHAUD et réel, mais rejeté : x0,87 net de frais et taxes à l'entrée aveugle |
 | HyperEVM, HyperSwap V2 | 2025 | 4 en 8 j (6 pairs) [R 23-30/10] | 6 | 2 les 29 et 30/10 [R] | achats ~250 k$ [R] | – | rejeté : < 1 lancement / j, mooners fabriqués |
 | Genius.fun (BSC, actions tokenisées) | 16/09/2026 | non mesuré | non mesuré | non mesuré | frais 35 k$ [L] | 2,30 | à suivre : contrat introuvable sans clé |
 | StonkFun (Solana) | 25/07/2026 | non mesuré | – | – | frais 192 k$ [L] | 0,69 | couvert : tourne sur LaunchLab [W] |
@@ -73,12 +73,14 @@ Datés mais pas des lieux neufs : Base Denim le 05/11 (blocs 200 ms) ; Initia re
 **C2. Flap.sh sur BSC** (2 fenêtres de 3 h : 30/10 12-15 h et 29/10 18-21 h UTC, suivi 24 h, tous les jetons créés) [R]
 - 1 100 et 648 jetons ; actifs 62 et 38, par 32 et 30 créateurs ; x5 3 et 5 (sur la courbe seulement, donc minorants). CHAUD.
 - 97 et 99 créateurs. Un seul a fait 143 jetons en 3 h et porte les 4 plus gros x24 du 30/10 : usine de masse.
-- « +60 % en 120 s », tous jetons : x1,005 et x1,012 avant frais (sans top 3 : x1,002 et x1,008).
-- Créateur sans jeton antérieur dans la fenêtre (définition causale) : x1,028 et x1,052 (sans top 3 : x1,010 et x1,035), ~100 jetons chacun.
-- Aller-retour : frais 1 % x 2 lus dans les événements, plus taxe des jetons 7777 (1 à 10 % selon la doc, non lue), plus gaz 2 x 0,0035 $.
+- Taxes lues sur le Portal (`taxes_flap.txt`) : 9 % à l'achat et 9 % à la vente pour 380 jetons sur 778 (30/10) et 206 sur 490 (29/10).
+- « +60 % en 120 s », tous jetons : x1,005 et x1,012 brut ; x0,869 et x0,882 net de frais (1 % x 2) et taxes.
+- Créateur sans jeton antérieur dans la fenêtre (causal) : x1,028 et x1,052 brut, x0,951 et x0,983 net (sans top 3 : x0,932 et x0,965), ~100 jetons chacun.
+- Taxe <= 1 % (connue à la création) : x0,977 et x1,029 net (sans top 3 : x0,958 et x1,003). Pas robuste d'une fenêtre à l'autre.
+- Aller-retour : frais 1 % x 2 + taxes ci-dessus + gaz 2 x 0,0035 $ ; impact sur la courbe non calculé.
 - Acheteurs des 8 plus gros : 12 à 15 payeurs distincts sur les 15 premiers achats, contrats publics de Flap, nonce médian ~1 000. Activité réelle.
 - Bots dans les blocs 0 à +2 : médiane 1 tx. x10, x100, tenir 7 j : non mesurés (le RPC public BSC ne sert que ~3 jours de logs).
-- Verdict : réel mais sans fenêtre à l'aveugle. Piste faible « nouveau créateur » : à re-tester chez toi avec la taxe lue.
+- Verdict : réel mais sans fenêtre. Pistes « nouveau créateur » et « taxe basse » rejetées sur ces chiffres : négatives ou nulles nettes.
 
 **C3. HyperEVM, HyperSwap V2** (naissances 23-30/10, suivi 24 h) [R]
 - 11 pairs créés en 8 jours, 6 cotés WHYPE, tous les 29 et 30/10. Pas CHAUD (< 1 lancement / j).
@@ -94,7 +96,7 @@ Limites communes : créateur = expéditeur de la tx de création (550 inconnus s
 ## 5. Non mesuré, et pourquoi
 - Caisse commune (qui finance les wallets) : il faut un explorateur ; explorer.arc.io répond 403, BscScan demande une clé.
 - Ventes en échec : invisibles dans les logs. Sur Arc, 0 échec sur 300 reçus ; ailleurs non mesuré.
-- Taxes des jetons Flap 7777 et impact sur la courbe : non lus (pas d'ABI publique des jetons).
+- Impact sur la courbe Flap : non calculé (paramètres r, h, k lisibles via getTokenV8Safe, formule non implémentée ici).
 - BSC avant ~le 28/10 : le RPC public rend une liste vide sans erreur, l'archive exige un jeton. Trou signalé, pas comblé.
 - Genius.fun (BSC, né le 16/09, frais x2,3 en 7 j) : contrat non publié, introuvable sans explorateur à clé.
 - Solana (StonkFun, OTC, Sapling) et non-EVM (TON, Spark) : pas d'outil gratuit monté ici. Chiffres DefiLlama seulement.
