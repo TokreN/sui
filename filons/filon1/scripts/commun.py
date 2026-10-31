@@ -91,6 +91,9 @@ def rpc(methode: str, params: list, url: str | None = None, cache: bool = False,
     url = url or os.environ.get("RPC_URL")
     if not url:
         raise SystemExit("Mets l'URL du RPC dans la variable d'environnement RPC_URL.")
+    bas = url.lower()
+    if "drpc" in bas or "key=" in bas or "apikey" in bas:
+        raise SystemExit("RPC refusé : pas de dRPC ni d'URL avec clé (consigne de Walid). Prends un RPC public gratuit.")
     corps = json.dumps({"jsonrpc": "2.0", "id": 1, "method": methode, "params": params}).encode()
     chemin = _cle(url + methode, corps)
     if cache and os.path.exists(chemin):

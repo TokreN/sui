@@ -172,3 +172,19 @@ CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 
 - Aucun signe de l'effet « +19,6 % » des migrations pump.fun de septembre. Le script `migrations_flap.py` est prêt pour un plus grand échantillon (RPC BSC à soi : le public ne garde que ~3 jours).
 
 ## 23:08 — Fin de la fenêtre de 4 h (départ 19:20). Rien de rentable trouvé sur chiffres sourcés.
+
+## 23:10 — Prolongation de 10 h demandée par Walid (jusqu'à ~09:10 UTC le 01/11)
+- Mêmes règles : données publiques, aucune clé, aucune transaction, tout dans cette session, commit >= toutes les 45 min.
+- Règle anti-hasard ajoutée : chaque piste est construite sur des fenêtres « d'étude », puis jugée sur des fenêtres « de contrôle » JAMAIS utilisées pour la construire. Trouvé = gagne net (sans top 3) sur l'étude ET sur le contrôle.
+- Ordre : (1) migrations Flap, gros échantillon ; (2) Genius.fun (trouver le contrat sur la chaîne) ; (3) Frontier sur Robinhood (hausse du 29/10) ; (4) lancements HIP-1 sur Hyperliquid (API publique).
+
+## H9b (avant de compter) — migrations Flap, gros échantillon
+- Étude : jetons créés le 30/10 00:00 -> 31/10 00:00 UTC. Contrôle : créés le 31/10 00:00 -> 12:00 UTC (jamais regardés avant).
+- Mêmes sorties et coûts que H9. Trouvé si une sortie a « sans top 3 » > 1 sur l'étude (n >= 30) ET sur le contrôle (n >= 15).
+
+## 23:22 — Résultat H9b (migrations, gros échantillon) — `scripts/mig_etude.txt`, `scripts/mig_controle.txt`
+- Étude (créés le 30/10) : 6 419 jetons, 40 migrent (0,6 %), tous à taxe basse (0 à 3 %), délai médian 2 min. Sans top 3 < 1 pour toutes les sorties (x0,25 à x0,83). H9b FAUSSE selon le critère fixé.
+- Contrôle (créés le 31/10 00-12 h) : 1 599 jetons, 7 migrent (n < 15, trop petit). Sans top 3 < 1 partout.
+- Motif récurrent repéré APRÈS coup (donc exploratoire, pas une trouvaille) : garder 1 h après la migration -> moyenne x1,667 (étude) et x1,218 (contrôle), portée par 2-3 jetons (x24 et x18 en 1 h) ; médiane x0,22 et x0,42. Profil loterie.
+- H9c (exploratoire, à confirmer sur données NEUVES) : « acheter à la migration, garder 1 h » a une espérance > 1. Contrôle neuf = jetons créés après 23:30 UTC le 31/10, jugés vers 08:00 UTC le 01/11. Critère : moyenne nette (impact compris) > 1 sur ce contrôle neuf, et probabilité bootstrap > 90 % que la moyenne regroupée soit > 1.
+- Genius.fun : publicnode refuse les recherches sans adresse ; bsc.rpc.blxrbdn.com (public, sans clé) les accepte.

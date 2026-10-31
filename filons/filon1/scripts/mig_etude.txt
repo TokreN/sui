@@ -1,0 +1,9 @@
+mig_etude : jetons créés 2026-10-30T00:00 -> 2026-10-31T00:00 UTC : 6419 ; migrés : 40 (0.6 %) ; mesurés (pool V2 avec Mint) : 40 ; sans Mint V2 : 0.
+dexId des migrés : 0 40
+Taxes des mesurés (achat, vente) : (100, 100) 17, (0, 100) 13, (300, 300) 7, (200, 200) 2
+Délai création -> migration : médiane 2 min (p10 0, p90 90).
+   F_60_120s   n=40 net moyen x0.881 | sans top3 x0.825 | médiane x0.818 | part > 1 : 15 sur 40
+   F_100_600s  n=40 net moyen x0.812 | sans top3 x0.718 | médiane x0.621 | part > 1 : 12 sur 40
+   T_trail30   n=40 net moyen x0.936 | sans top3 x0.812 | médiane x0.848 | part > 1 : 12 sur 40
+   H_1h        n=40 net moyen x1.667 | sans top3 x0.569 | médiane x0.217 | part > 1 : 11 sur 40
+   H_24h       n=38 net moyen x1.455 | sans top3 x0.254 | médiane x0.085 | part > 1 : 5 sur 38
