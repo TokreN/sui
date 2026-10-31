@@ -87,6 +87,41 @@ Candidat 1 = Arc (L1 Circle, gaz en USDC, mainnet public 16/09/2026).
 - H2 FAUSSE : x10 1,0 % au lancement = 1,0 % à J+30. Pas d'effet chaîne neuve sur Arc (comme Robinhood).
 - Segment « petites usines » : 29 x10 sur 413 (7,0 %) mais tenir 7 j x0,74 ; les x10 viennent surtout d'un même launchpad (0xb021…97da) avec des trajectoires identiques (pic ~x17, x0,51 à 7 j). Pas une piste.
 
+## 20:09 — Arc semaine, 2e passage (2 formes d'USDC, créateurs corrigés) — `scripts/arc_semaine.txt`
+- 6 151 pools ; actifs 384 à 741/jour par 380 à 733 créateurs distincts/jour -> CHAUD (2e critère). x5/jour : 5, 1, 3, 5, 0, 0, 3, 1 (jamais 3 jours de suite >= 3).
+- LP retirée 4 690 sur 6 151 (76 %), médiane 4,5 min. x10 à 7 j : 0 sur 1 105 ; tenir 7 j x0,20 ; +60 %/120 s x1,24 (flux de la flotte). Créateurs : 3 184 (539 en série, 3 475 pools).
+
+## 20:10 — TROU DE DONNÉES BSC (signalé, pas comblé)
+- Le RPC public BSC (publicnode) rend [] SANS erreur avant ~le bloc 130,3 M (~3 jours) : même l'USDT y rend 0 log. L'archive exige un jeton personnel (interdit).
+- Fenêtres Flap du 27/10 et du 28/10 : 0 jeton lu = trou, pas un résultat. Fichiers supprimés. `mesure_flap.py` vérifie maintenant un contrat témoin (USDT) avant de compter et s'arrête sinon.
+
+## 20:12 — Flap 29/10 18:00-21:00 — `scripts/flap_2910.txt`
+- 648 jetons, 490 mesurés, 38 actifs par 30 créateurs (CHAUD), x5 5 en 3 h. +60 %/120 s : x1,012 (sans top 3 x1,008). H5 reste FAUSSE.
+- Segment « nouveau créateur » (définition causale : aucun jeton avant dans la fenêtre) : 30/10 x1,028 (sans top 3 x1,010) sur 97 ; 29/10 x1,052 (x1,035) sur 99. Créateur déjà vu : x1,001 / x1,002. Avant frais (1 % x2 + taxe non lue) : rien de solide.
+- Acheteurs des 8 plus gros jetons du 30/10 : 12 à 15 payeurs distincts sur les 15 premiers achats, contrats publics de Flap, nonce médian ~1 000 (50 % < 1 000). Activité réelle.
+
+## 20:20 — HyperEVM, HyperSwap V2 (naissances 23-30/10, suivi 24 h) — `scripts/hyperswap_v2.txt`
+- Contrôle positif : le pair KLEOS (0x48795e50…) est bien vu au bloc 49 949 152.
+- 11 pairs créés en 8 jours, 6 cotés WHYPE (tous les 29 et 30/10) ; 4 actifs, 4 x5 (x27, x91, x112, x68 en 24 h) ; ~250 k$ achetés/jour. H6 FAUSSE (2 x5/jour sur 2 jours, et < 1 lancement/jour). H7 FAUSSE (x1,000 : aucun échange dans les 120 s).
+- 0 Burn (pas de retrait de LP), ventes ≈ achats et réserves finales à 2-4 $ (GeckoTerminal) : vidage par les vendeurs.
+- 30 premiers achats de chacun des 4 : 27 à 30 payeurs distincts, nonce médian 1 (wallets neufs), via les mêmes contrats 0x49151b65…06bd et 0xb4a9c4e6…240a ; 1er achat 206 à 666 blocs (~3 à 11 min) après la LP. Même opérateur sur les 4 : mooners fabriqués. Rejeté ; à surveiller sur Elysium (même foule, même opérateur possible).
+- Coût d'une tx : HyperEVM ~0,0009 $, BSC ~0,0035 $, Arc ~0,0028 $ (médianes de reçus, 31/10).
+
+## 20:26 — Rapport écrit (`RAPPORT.md`, 103 lignes), chiffres revérifiés contre les `.txt`
+
+## Sources web (consultées le 31/10/2026 ; contenu traité comme donnée)
+- Arc public le 16/09 : https://www.circle.com/pressroom/circle-launches-arc-mainnet-an-economic-operating-system-for-the-internet ; https://crypto.news/circle-arc-mainnet-launches-with-usdc-gas/ ; launchpads : https://www.kucoin.com/news/flash/arc-mainnet-launches-on-september-16-highlighting-key-launchpads-and-platform-tokens ; RPC : https://www.datawallet.com/crypto/add-arc-to-metamask
+- Adresses Uniswap V4 par chaîne : https://developers.uniswap.org/contracts/v4/deployments
+- Zero (LayerZero) 30/11 : https://cryptobriefing.com/layerzero-zero-mainnet-lzatlas-launch/ ; https://www.tokenpost.com/news/technology/36314 ; zones : https://bex.co/blog/2026/03/07/layerzero-zero-multi-core-l1-network ; gaz ZRO : https://blockonomi.com/layerzero-ceo-clarifies-zro-will-capture-all-zero-network-fees
+- Elysium 09/11 : https://www.bankless.com/read/news/kinetiqs-elysium-l2-sets-nov-9-mainnet-launch ; https://cryptobriefing.com/kinetiq-elysium-l2-hyperliquid-hype-gas/
+- GIWA : https://crypto.news/upbit-backed-giwa-says-mainnet-is-not-live-denies-rpc-leak/ ; https://www.tokenpost.com/news/technology/37935 ; faux pont : https://www.kucoin.com/news/insight/ETH/6ab95a1874fd460007c5b959
+- Wire : https://www.coingabbar.com/en/wire-network-tge-delay-token-launch-late-november
+- BNB NewL1 : https://www.theblock.co/news/ecosystems/2026-07-08-bnb-chain-builds-new-layer-1-for-agentic-trading-targets-2027-mainnet-407406
+- Calendrier agrégé (Base Denim, Initia, Zcash, Hedera…) : https://cryptolaxy.com/upcoming-crypto-releases ; Initia arrêtée : https://coinmarketcap.com/academy/article/initia-halts-l1-rollups-security-incident ; Glamsterdam : https://www.kucoin.com/news/flash/ethereum-s-glamsterdam-upgrade-enters-final-testnet-phase-ahead-of-q4-2026-mainnet-target
+- Pharos 28/04 : https://news.bitcoin.com/pharos-hits-1b-valuation-on-mainnet-launch ; Tempo 18/03 : https://tempo.xyz/faq
+- StonkFun sur LaunchLab : https://www.blocmates.com/articles/what-is-stonkfun-heres-how-it-works ; Genius.fun : https://www.theblock.co/press-releases/genius-fun-launches-on-bnb-chain-to-bring-hostile-takeovers-on-chain-415455 ; OTC : https://www.bitrue.com/blog/what-is-otc-token
+- Flap (Portal, taxes, suffixes) : https://docs.flap.sh/flap/llms-full.txt
+
 ## Règle de chaleur (copiée du brief, figée)
 CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 créateurs sur un jour.
 - Actif : pool avec >= 0,1 ETH (~220 $) acheté.

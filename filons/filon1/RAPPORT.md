@@ -1,52 +1,103 @@
 # Filon 1 — Lieux neufs : launchpads et chaînes (31/10/2026)
 
-Sources : [L] DefiLlama 31/10, [G] GeckoTerminal 31/10 (fenêtre ~3 j), [R] mes mesures RPC (scripts/), [W] web (lien dans JOURNAL.md).
+Sources : [L] DefiLlama 31/10 ; [G] GeckoTerminal 31/10 (nouveaux pools sur ~3 j) ; [R] mes mesures RPC, détail dans `scripts/*.txt` ; [W] web, liens dans `JOURNAL.md`.
 
 ## 1. Pour Walid
-@@TROIS_LIGNES@@
+1. Rien de neuf n'est à la fois chaud et armable. Arc (public le 16/09) et Flap.sh (BSC) passent la règle de chaleur. Mais Arc est une flotte qui fabrique le volume puis retire la LP (4 690 pools sur 6 151 en ~4,5 min), et Flap ne rend rien à l'entrée aveugle (x1,005 et x1,012 avant frais).
+2. Prépare Elysium (09/11, déjà fait) et Zero de LayerZero (30/11, seule autre chaîne neuve datée) : ZRO pour le gaz, `mesure_v4.py` / `mesure_v2.py` prêts, RPC officiel le jour J. Attente faible : Arc, L1 institutionnelle comparable, n'a fait que 1,0 % de x10 au lancement, autant qu'à J+30.
+3. Avant le 09/11 pour Elysium, avant le 30/11 pour Zero. Sur Elysium, guette les contrats 0x49151b65…06bd et 0xb4a9c4e6…240a : ce sont eux qui fabriquent les mooners de HyperSwap V2.
 
 ## 2. Lieux examinés (30 derniers jours, hors terrains couverts)
 | Lieu | Né le | Lancements actifs / j | Créateurs | x5 / j | Volume / j | 7 j / 30 j | Verdict |
 |---|---|---|---|---|---|---|---|
-@@ARC_LIGNE@@
-| Flap.sh (BSC) | 2024 (Portal v5) | ~500 (62 en 3 h) [R 30/10] | 97 pour 1 100 jetons en 3 h | ~24 (3 en 3 h, minorant) [R] | frais 686 k$ [L] | 0,75 | CHAUD, mais pas de fenêtre à l'aveugle (x1,005 avant frais) : à suivre |
-@@HYPER_LIGNE@@
-| Genius.fun (BSC, actions tokenisées) | 16/09/2026 | non mesuré | non mesuré | non mesuré | frais 35 k$ [L] | 2,30 | à suivre : contrat non publié, introuvable sans clé |
+| Arc (L1 Circle, gaz USDC) | public 16/09/2026 | 384 à 741 [R 23-30/10] | 380 à 733 / j | 0 à 5 [R] | DEX 25,4 M$ [L] | 0,76 | CHAUD par la règle, mais flotte + LP retirée (76 %) : rejeté |
+| Flap.sh (BSC) | 2024 (Portal v5) | ~300 à 500 (62 et 38 en 3 h) [R 29-30/10] | ~100 pour 650 à 1 100 jetons / 3 h | ~24 à 40 (minorant) [R] | frais 686 k$ [L] | 0,75 | CHAUD, activité réelle, pas de fenêtre à l'aveugle : à suivre |
+| HyperEVM, HyperSwap V2 | 2025 | 4 en 8 j (6 pairs) [R 23-30/10] | 6 | 2 les 29 et 30/10 [R] | achats ~250 k$ [R] | – | rejeté : < 1 lancement / j, mooners fabriqués |
+| Genius.fun (BSC, actions tokenisées) | 16/09/2026 | non mesuré | non mesuré | non mesuré | frais 35 k$ [L] | 2,30 | à suivre : contrat introuvable sans clé |
 | StonkFun (Solana) | 25/07/2026 | non mesuré | – | – | frais 192 k$ [L] | 0,69 | couvert : tourne sur LaunchLab [W] |
-| OTC (Solana) | 27/08/2026 | non mesuré | – | – | frais 102 k$ [L] | 0,93 | jeton lancé sur pump.fun ; infra du lanceur non vérifiée |
+| OTC (Solana) | 27/08/2026 | non mesuré | – | – | frais 102 k$ [L] | 0,93 | jeton né sur pump.fun ; infra du lanceur non vérifiée |
 | Graphite (moteur de bonk.fun) | 18/08/2025 | – | – | – | frais 45 k$ [L] | 1,23 | couvert (LaunchLab) |
 | Sapling (Solana, Zcash) | 25/09/2026 | – | – | – | frais 17 k$ [L] | 1,10 | couvert (LaunchLab) |
 | Frontier (Robinhood) | 30/07/2026 | – | – | – | frais 23 k$, pic 153 k$ le 29/10 [L] | 4,27 | terrain couvert ; fait daté du 29/10, non mesuré |
 | Alt Fun (Hyperliquid) | 14/05/2026 | – | – | – | frais 2,4 k$ [L] | 3,66 | rejeté : trop petit |
 | fusi.ng (ETH, Uniswap V4) | 10/09/2026 | – | – | – | frais 2 k$ [L] | 1,29 | sans doute dans ta veille V4 |
-| Monad | 24/11/2025 | 0 pool né en 24 h ; 200 pools « spam » le 30/10 à 0,5 $ [G] | – | 0 | DEX 26,6 M$ ; nad.fun frais 1,5 k$ [L] | 0,78 | rejeté : pas de lancements réels |
+| Monad | 24/11/2025 | 0 né en 24 h ; 200 pools « spam » à 0,5 $ le 30/10 [G] | – | 0 | DEX 26,6 M$ ; nad.fun frais 1,5 k$ [L] | 0,78 | rejeté : pas de vrais lancements |
 | MegaETH | 09/02/2026 | 1 pool en 2,7 j [G] | – | 0 | DEX 0,70 M$ [L] | 1,14 | rejeté : vide |
-| X Layer | 2024 | ~27 pools/j, tous à 19 acheteurs et 0 vendeur [G] | – | 0 | DEX 42,8 M$ [L] | 1,52 | rejeté : ferme de robots |
-| TON | 2022 | ~59 pools/j [G] | – | ~1 (approx.) [G] | DEX 3,2 M$ [L] | 0,91 | rejeté : 8,7 k$ max par pool |
+| X Layer | 2024 | ~27 pools / j, tous à 19 acheteurs et 0 vendeur [G] | – | 0 | DEX 42,8 M$ [L] | 1,52 | rejeté : ferme de robots |
+| TON | 2022 | ~59 pools / j [G] | – | ~1 (approx.) [G] | DEX 3,2 M$ [L] | 0,91 | rejeté : 8,7 k$ max par pool |
 | Tron | 2020 | trou de données GT (0 pool rendu) | – | – | DEX 192 M$ ; SunPump frais 376 $ [L] | 2,23 | rejeté : la hausse n'est pas des lancements |
 | Tempo (Stripe) | 18/03/2026 | 0 pool en 3 j [G] | – | – | DEX 0,88 M$ [L] | 0,83 | rejeté |
-| Unichain | 02/2025 | 1,3 pool/j [G] | – | – | DEX 14,2 M$ [L] | 1,46 | rejeté |
+| Unichain | 02/2025 | 1,3 pool / j [G] | – | – | DEX 14,2 M$ [L] | 1,46 | rejeté |
 | Fluent | 29/04/2026 | 0 pool en 3 j [G] | – | – | DEX 0,20 M$ [L] | 1,65 | rejeté : trop petit |
 | Igra (L2 Kaspa) | 07/04/2026 | 1 pool en 3 j [G] | – | – | DEX 17 k$ [L] | 0,69 | rejeté |
 | Pharos | 28/04/2026 | 0 pool en 3 j [G] | – | – | non mesuré | – | rejeté |
 | Citrea / Mezo (L2 Bitcoin) | 01/2026 | 0 pool en 3 j [G] | – | – | 57 k$ / 88 k$ [L] | ~1 | rejeté |
-| Sui | 2023 | 5 pools/j [G] | – | 0 | DEX 25 M$ [L] | 0,77 | rejeté |
-| Aptos (MoveFast) / Injective (RunUp) | 13/10 / 02/10/2026 | – | – | – | frais 2 $ / 199 $ [L] | 0,01 / 0,15 | rejetés : éteints |
+| Sui | 2023 | 5 pools / j [G] | – | 0 | DEX 25 M$ [L] | 0,77 | rejeté |
+| Aptos (MoveFast) / Injective (RunUp) | 13/10 et 02/10/2026 | – | – | – | frais 2 $ / 199 $ [L] | 0,01 / 0,15 | rejetés : éteints |
 | Stable (Pumper) | 24/07/2026 | – | – | – | frais 304 $ [L] | 0,96 | rejeté |
 | Spark (L2 Bitcoin, Flashnet) | 2025 | non mesuré | – | – | DEX 69 M$ [L] | 0,99 | non mesuré (non EVM) |
 
 ## 3. Calendrier (01/11 → 30/12/2026)
 | Quoi | Date (source) | EVM | Gaz | Pont | Ordre des tx | DEX / launchpads | Testnet / RPC | À préparer | Bloquant |
 |---|---|---|---|---|---|---|---|---|---|
-| Zero (L1 LayerZero) | 30/11 (annonce officielle 20/10 [W]) | oui (1re zone EVM sans permission) | ZRO | non trouvé | non trouvé | lzATLAS (> 10 places de marché) ; aucun launchpad annoncé | testnet et RPC publics : non trouvés | ZRO pour le gaz ; script d'achat V2/V4 générique ; surveiller docs officielles | cible institutionnelle (actions, taux) |
-| Elysium (L2 Kinetiq) | 09/11 (teaser officiel, Bankless 19/10 [W]) | oui (Arbitrum Orbit) | HYPE | HYPE 1:1 depuis HyperEVM | 1 séquenceur | DEX Nest dès le 1er bloc ; Montra, Citadel | testnet depuis 22/09 | déjà préparé | lien HyperCore ~1 mois après |
-| GIWA (L2 Upbit) | aucune date ; démenti officiel fin 09 ; faux pont 766 ETH [W] | oui (OP Stack) | ETH | pont OP officiel | 1 séquenceur | rien d'annoncé | testnet Sepolia | ne suivre que les domaines officiels | faux lancements |
-| Wire Network | TGE 2e moitié de nov. ; mainnet « selon liquidité » [W] | non trouvé | non trouvé | non trouvé | non trouvé | non trouvé | non trouvé | rien | rumeur |
+| Zero (L1 LayerZero) | 30/11, annonce officielle du 20/10 [W] | oui (1re zone EVM sans permission) | ZRO | non trouvé | non trouvé | lzATLAS (> 10 places de marché) ; aucun launchpad annoncé | testnet et RPC publics : non trouvés | ZRO ; scripts V2/V4 ; docs officielles | cible institutionnelle (actions, taux) |
+| Elysium (L2 Kinetiq) | 09/11, teaser officiel (Bankless 19/10) [W] | oui (Arbitrum Orbit) | HYPE | HYPE 1:1 depuis HyperEVM | 1 séquenceur | DEX Nest dès le 1er bloc ; Montra, Citadel | testnet depuis le 22/09 | déjà préparé | lien HyperCore ~1 mois après |
+| GIWA (L2 Upbit) | aucune date ; démenti officiel fin 09 ; un faux pont a reçu 766 ETH [W] | oui (OP Stack) | ETH | pont OP officiel | 1 séquenceur | rien d'annoncé | testnet Sepolia | ne suivre que les domaines officiels | faux lancements |
+| Wire Network | TGE 2e moitié de novembre ; mainnet « selon la liquidité » [W] | non trouvé | non trouvé | non trouvé | non trouvé | non trouvé | non trouvé | rien | rumeur |
 | BNB « NewL1 » | testnet public fin 2026, mainnet 2027 [W] | oui | BNB | – | blocs 200 ms | – | testnet seulement | rien avant 2027 | hors fenêtre |
-Hors lieux neufs mais datés : Base Denim 05/11 (blocs 200 ms), Initia redémarre ~02/11 après l'exploit du 23/10, Glamsterdam (ePBS sur ETH) visé au T4.
+
+Datés mais pas des lieux neufs : Base Denim le 05/11 (blocs 200 ms) ; Initia redémarre vers le 02/11 après l'exploit du 23/10 ; Glamsterdam (ePBS sur ETH) visé au T4.
 
 ## 4. Mesures (point C)
-@@MESURES@@
+**C1. Arc** (Uniswap V4, tous les pools cotés USDC natif ou ERC-20 ; lancement = échantillon uniforme de 1 sur 58) [R]
+| | Lancement 16-18/09 | Placebo J+30 16-18/10 | 23-30/10 |
+|---|---|---|---|
+| Pools créés / j | 99 879 / 55 670 / 18 680 | 899 à 1 112 | 603 à 1 235 |
+| Actifs / j (créateurs) | ~9 500 / ~2 500 / ~1 400 (x58) | 328 à 353 (~300) | 384 à 741 (380 à 733) |
+| x5 / j | ~1 200 / ~400 / 0 (x58) | 17 / 22 / 5 | 0 à 5 |
+| x10 à 7 j ; x100 | 30 sur 2 967 (1,0 %) ; 11 | 30 sur 2 861 (1,0 %) ; 0 | 0 sur 1 105 ; 0 |
+| Tenir 7 j / +60 % en 120 s | x0,93 / x1,01 | x0,64 / x1,11 | x0,20 / x1,19 (x1,24 sur les 6 151) |
+| Tenir 7 j sans top 3 ; par moitié | x0,92 ; x0,92 / x0,94 | x0,63 ; x0,71 / x0,57 | x0,19 ; x0,31 / x0,08 |
+| Mortes à 7 j | 2 959 sur 2 967 | 2 858 sur 2 861 | 1 105 sur 1 105 |
+| x10 heure 1 / h 2-24 / jour 2 / jour 3 | 1 sur 19 / 24 sur 1 683 / 4 sur 948 / 1 sur 317 | 1 sur 45 / 12 sur 1 050 / 15 sur 882 / 2 sur 884 | 0 |
+| x10 créateur unique / série | 1,8 % / 0,5 % | 0,7 % / 3,3 % | 0 / 0 |
+| x10 usine de masse / petites | 0,4 % / 2,3 % | 0,0 % / 7,0 % (mais tenir 7 j x0,74) | 0 / 0 |
+| LP retirée (>= 50 %) | 192 sur 2 967 | 1 071 sur 2 862 | 4 690 sur 6 151, médiane 4,5 min |
+| Impact à l'entrée 110 $ / 450 $ | 4,2 % / 17 % | 4,4 % / 18 % | 1,6 % / 6,4 % |
+- Aller-retour à 110 $ : gaz 2 x 0,003 $, frais LP 2 x 0,25 % (1 % au lancement), impact 2 x 1,6 % (4,2 % au lancement). Soit ~3,7 % aujourd'hui, ~10 % au lancement.
+- Acheteurs du 16/09 : foule réelle (40 pools : 95 payeurs distincts pour 104 achats, nonce médian 247, 88 % < 1 000).
+- Acheteurs du 30/10 : flotte (40 pools : 1 771 achats en 200 s, 100 % via 0x43d894e2…41d5 et 0x934412cf…e51f ; ce dernier retire aussi la LP ; nonce médian 30 321 ; 1er achat au bloc +11).
+- Le x1,24 du « +60 % en 120 s » est donc le flux de la flotte, pas une fenêtre. Bots dans les blocs 0 à +2 : médiane 0 à 1 tx.
+- Verdict : pas d'effet chaîne neuve (x10 1,0 % au lancement comme à J+30), puis volume fabriqué. Rejeté.
+
+**C2. Flap.sh sur BSC** (2 fenêtres de 3 h : 30/10 12-15 h et 29/10 18-21 h UTC, suivi 24 h, tous les jetons créés) [R]
+- 1 100 et 648 jetons ; actifs 62 et 38, par 32 et 30 créateurs ; x5 3 et 5 (sur la courbe seulement, donc minorants). CHAUD.
+- 97 et 99 créateurs. Un seul a fait 143 jetons en 3 h et porte les 4 plus gros x24 du 30/10 : usine de masse.
+- « +60 % en 120 s », tous jetons : x1,005 et x1,012 avant frais (sans top 3 : x1,002 et x1,008).
+- Créateur sans jeton antérieur dans la fenêtre (définition causale) : x1,028 et x1,052 (sans top 3 : x1,010 et x1,035), ~100 jetons chacun.
+- Aller-retour : frais 1 % x 2 lus dans les événements, plus taxe des jetons 7777 (1 à 10 % selon la doc, non lue), plus gaz 2 x 0,0035 $.
+- Acheteurs des 8 plus gros : 12 à 15 payeurs distincts sur les 15 premiers achats, contrats publics de Flap, nonce médian ~1 000. Activité réelle.
+- Bots dans les blocs 0 à +2 : médiane 1 tx. x10, x100, tenir 7 j : non mesurés (le RPC public BSC ne sert que ~3 jours de logs).
+- Verdict : réel mais sans fenêtre à l'aveugle. Piste faible « nouveau créateur » : à re-tester chez toi avec la taxe lue.
+
+**C3. HyperEVM, HyperSwap V2** (naissances 23-30/10, suivi 24 h) [R]
+- 11 pairs créés en 8 jours, 6 cotés WHYPE, tous les 29 et 30/10. Pas CHAUD (< 1 lancement / j).
+- 4 sur 6 font x5 en 24 h (x27, x91, x112, x68), ~250 k$ achetés par jour.
+- « +60 % en 120 s » : x1,000. Aucun échange les 2 premières minutes ; 1er achat 206 à 666 blocs (~3 à 11 min) après la LP.
+- 30 premiers achats de chaque pump : 27 à 30 payeurs, nonce médian 1, via les 2 mêmes contrats. Même opérateur, wallets neufs : mooners fabriqués.
+- 0 retrait de LP, mais ventes ≈ achats et réserves finales de 2 à 4 $ [G 31/10] : vidage par les vendeurs.
+- Aller-retour : frais V2 0,3 % x 2 (standard, non lu), gaz 2 x 0,0009 $ ; impact non calculé. x10, x100, 7 j : non mesurés (pairs trop jeunes).
+- Verdict : rejeté. Utile pour Elysium : même foule, opérateur à guetter.
+
+Limites communes : créateur = expéditeur de la tx de création (550 inconnus sur 2 967 au lancement d'Arc) ; caisse commune non vérifiée ; prix du 31/10 (BNB 706 $, HYPE 88 $) appliqués à toute la période ; « mortes à 7 j » = aucun swap >= 5 $ entre J+6 et J+7, ou prix < 10 % de l'entrée, ou LP retirée.
 
 ## 5. Non mesuré, et pourquoi
-@@NON_MESURE@@
+- Caisse commune (qui finance les wallets) : il faut un explorateur ; explorer.arc.io répond 403, BscScan demande une clé.
+- Ventes en échec : invisibles dans les logs. Sur Arc, 0 échec sur 300 reçus ; ailleurs non mesuré.
+- Taxes des jetons Flap 7777 et impact sur la courbe : non lus (pas d'ABI publique des jetons).
+- BSC avant ~le 28/10 : le RPC public rend une liste vide sans erreur, l'archive exige un jeton. Trou signalé, pas comblé.
+- Genius.fun (BSC, né le 16/09, frais x2,3 en 7 j) : contrat non publié, introuvable sans explorateur à clé.
+- Solana (StonkFun, OTC, Sapling) et non-EVM (TON, Spark) : pas d'outil gratuit monté ici. Chiffres DefiLlama seulement.
+- Carte des 30 jours hors Arc, Flap et HyperSwap V2 : GeckoTerminal ne rend que ~3 jours de nouveaux pools. Le reste repose sur les volumes et frais DefiLlama, pas sur un comptage de pools.
+- Zero : testnet, RPC, ordre des transactions et DEX : rien de public au 31/10.
+- Frontier (Robinhood, pic le 29/10) : terrain couvert, non mesuré ici.

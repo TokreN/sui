@@ -83,6 +83,8 @@ def main():
     ap.add_argument("--pas", type=int, default=9999)
     ap.add_argument("--fils", type=int, default=6)
     ap.add_argument("--nom", required=True)
+    ap.add_argument("--controle", default="0x55d398326f99059fF775485246999027B3197955",
+                    help="contrat toujours actif (USDT sur BSC) : contrôle que le RPC sert bien ces blocs")
     a = ap.parse_args()
 
     t0 = int(dt.datetime.fromisoformat(a.debut).replace(tzinfo=dt.UTC).timestamp())
@@ -92,6 +94,10 @@ def main():
     b0, b1 = bloc_a(t0, tete), bloc_a(t1, tete)
     b2 = bloc_a(t2, tete) if t2 < ts_bloc(tete) else tete
     print(f"blocs {b0} -> {b1}, suivi -> {b2}", file=sys.stderr)
+    # contrôle positif : un RPC public peut rendre [] sans erreur pour des blocs trop anciens (logs élagués)
+    if not rpc("eth_getLogs", [{"address": a.controle, "fromBlock": hex(b0), "toBlock": hex(b0 + 20)}]):
+        raise SystemExit(f"TROU DE DONNÉES : 0 log du contrat de contrôle au bloc {b0}. Ce RPC ne sert pas ces blocs "
+                         "(les RPC publics BSC ne gardent que ~3 jours de logs). Prends une fenêtre plus récente ou ton propre nœud.")
 
     jetons = {}
     for l in logs(a.portal, [CREE], b0, b1 - 1, a.pas, a.fils):

@@ -1,0 +1,31 @@
+arc_semaine : PoolManager 0x8366a39CC670B4001A1121B8F6A443A643e40951, naissances 2026-10-23T00:00 -> 2026-10-31T00:00 UTC, suivi 24.0 h.
+Pools créés : 6350 ; cotés USD : 6151 ; mesurés : 6151 ; autres cotations ignorées : 199.
+Créations par jour (tous pools) : 10-23 603, 10-24 735, 10-25 874, 10-26 758, 10-27 716, 10-28 733, 10-29 696, 10-30 1235
+jour | pools | actifs (>=220 $ achetés 24 h) | créateurs des actifs | x5 24 h (>=2 200 $ achetés) | volume achats 24 h | LP retirée < 24 h
+2026-10-23 | 557 | 384 | 380 | 5 | 3,148,524 $ | 377
+2026-10-24 | 712 | 613 | 613 | 1 | 5,651,707 $ | 620
+2026-10-25 | 853 | 741 | 733 | 3 | 6,220,501 $ | 741
+2026-10-26 | 737 | 562 | 551 | 5 | 5,929,624 $ | 556
+2026-10-27 | 711 | 569 | 562 | 0 | 6,472,148 $ | 568
+2026-10-28 | 711 | 556 | 554 | 0 | 6,460,098 $ | 604
+2026-10-29 | 671 | 558 | 555 | 3 | 6,322,288 $ | 595
+2026-10-30 | 1199 | 558 | 555 | 1 | 6,498,066 $ | 594
+Créateurs : 3184 ; en série (>= 3 pools) : 539 (3475 pools).
+Usines (to de la tx de création) : 0x6049c9a0e26405c0985f9e3685c87d0ae917f82b 4691, 0xeed7559b8a6abf64427dc41cb5cc6400109c5d93 788, 0xb021be536808f551b31789422fd28a6c9c6e97da 99, 0x07524ddc8a51ad596a149d9bf76335594baf1dd5 85, 0x14870a3282bd707b252e3c0f356a68b4c8f6d2ff 59
+Familles de jetons (4 derniers caractères de l'adresse) : 7777 2847, 6777 128, 1777 124, 4777 124, 5777 121
+Retrait de LP (>= 50 %) : 4690 sur 6151 pools ; en < 10 min : 4628 ; < 1 h : 4639 ; < 24 h : 4655 ; délai médian 4.5 min
+Stratégie +60 % en 120 s (retrait de LP = -100 %), multiple moyen avant frais : x1.240 (sans les 3 meilleurs : x1.240)
+Grille 7 j sur 1105 pools (tous les pools cotés USD, pas seulement les actifs) :
+  x10 : 0 sur 1105 (0.0 %) ; x100 : 0 sur 1105 (0.0 %)
+  tenir 7 j (retrait de LP = -100 %), multiple moyen : x0.20 ; +60 % en 120 s : x1.19
+  tenir 7 j sans les 3 meilleurs : x0.19
+  mortes à 7 j : 1105 sur 1105
+  par moitié de période, tenir 7 j : x0.31 / x0.08
+  heure 1 (depuis le 1er pool de la fenêtre) : x10 0 sur 19 (0.0 %)
+  heures 2-24 (depuis le 1er pool de la fenêtre) : x10 0 sur 540 (0.0 %)
+  jour 2 (depuis le 1er pool de la fenêtre) : x10 0 sur 546 (0.0 %)
+  x10 créateur unique : 0 sur 290 (0.0 %) ; en série : 0 sur 797 (0.0 %)
+  x10 usine de masse (>1000) : 0 sur 895 (0.0 %) ; autres : 0 sur 210 (0.0 %)
+Impact médian à l'entrée : 110 $ 1.6 % ; 450 $ 6.4 %
+Ventes bloquées probables (>= 5 achats, 0 vente >= 5 $ en 24 h) : 5 sur 6151
+Transactions de swap dans les blocs 0 à +2 (médiane par pool) : 1
