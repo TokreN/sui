@@ -58,6 +58,35 @@ Candidat 1 = Arc (L1 Circle, gaz en USDC, mainnet public 16/09/2026).
 - H6 : HyperSwap V2 est CHAUD par la règle des x5 (>= 3 x5 par jour, 3 jours de suite) sur les naissances du 23 au 30/10. Critère : table par jour de `hyperswap_v2.txt`.
 - H7 : « +60 % en 120 s » > x1,10 avant frais sur TOUS les pairs cotés WHYPE, et > x1,03 sans les 3 meilleurs.
 
+## 19:50-19:56 — Arc, semaine 23-30/10 (USDC natif seul, 1er passage) et vérification des acheteurs
+- 4 728 pools mesurés : ~550 actifs/jour, 20 à 131 créateurs d'actifs/jour -> CHAUD par la règle (2e critère). x5 : 0 chaque jour.
+- LP retirée (>= 50 %) : 4 563 sur 4 728, délai médian 4,5 min (p10 0,8 min, p90 6,8 min).
+- « +60 % en 120 s » : x1,325 avant frais (77 % des pools touchent +60 % avant le retrait, 15 % retirés avant 120 s).
+- MAIS vérification des acheteurs (40 pools du 30/10, 1 sur 14, 200 s suivies, `verif_arc_3010.txt` + analyse) :
+  - 0 achat dans les blocs +1 à +3 ; 1er achat >= 5 $ au bloc +11 en médiane (~5,5 s).
+  - 1 771 achats >= 5 $ sur 200 s : 100 % via 2 contrats privés (0x43d8…41d5 : 1 205 ; 0x9344…e51f : 566). 0 achat via le routeur public.
+  - 0x9344…e51f est le contrat par lequel le créateur retire la LP (vu sur HALLOWEEN). Même opérateur.
+  - Payeurs : nonce médian 30 321 ; 60 sur 1 285 ont un nonce < 1 000. Ils revendent via le routeur public, multiple réalisé médian x1,02.
+  - Conclusion : volume fabriqué par une flotte (lavage + retrait de LP). Le x1,325 est un artefact de la flotte, pas une fenêtre. Verdict : rejeté (même cas que Robinhood).
+- Bug corrigé : 4 110 recherches de tx avaient échoué en silence (créateurs « None »). Lots de 20 + relances + cache. Relancé.
+
+## 20:00-20:05 — Arc, lancement 16-19/09 (échantillon uniforme 1 sur 58, suivi 7 j) — `scripts/arc_lancement.txt`
+- Créations : 99 879 (16/09), 55 670 (17/09), 18 680 (18/09). 172 071 cotées USD (surtout USDC 0x3600, 6 déc.).
+- Échantillon 2 967 : actifs 164 / 43 / 24 (x58 ≈ 9 500 / 2 500 / 1 400 par jour) ; x5 21 / 7 / 0. CHAUD les 2 premiers jours.
+- Grille : x10 30 sur 2 967 (1,0 %), x100 11 (0,4 %) ; tenir 7 j x0,93 (sans top 3 x0,92 ; moitiés x0,92 / x0,94) ; +60 %/120 s x1,01 ; mortes 2 959 sur 2 967.
+- x10 par moment : heure 1 1 sur 19 ; heures 2-24 24 sur 1 683 (1,4 %) ; jour 2 4 sur 948 (0,4 %) ; jour 3 1 sur 317.
+- Créateur unique 17 sur 962 (1,8 %) contre série 9 sur 1 895 (0,5 %) ; usine de masse (0xb021…97da) 8 sur 2 030 (0,4 %) contre autres 22 sur 937 (2,3 %).
+- Impact à l'entrée : 4,2 % à 110 $, 17 % à 450 $. LP retirée : 192 sur 2 967 (délai médian 4,5 h).
+- Acheteurs du 16/09 : échantillon uniforme 40 pools, 95 payeurs distincts pour 104 achats, nonce médian 247, 88 % < 1 000 ; actifs : 420 payeurs, nonce médian 169. Foule réelle le jour 1 (contre flotte fin octobre).
+- 550 tx de création introuvables sur 2 967 (créateur inconnu) : les parts unique/série sont sur les 2 417 restants + « inconnu ».
+- Lecture : effet chaîne neuve faible sur Arc (x10 1,0 % contre 17,8 / 3,1 / 4,6 % sur HyperEVM / Plasma / Robinhood). H2 jugée après le placebo.
+
+## 20:08 — Arc, placebo J+30 (naissances 16-18/10, tous les 2 862 pools USD, suivi 7 j) — `scripts/arc_placebo_j30.txt`
+- 900 à 1 100 créations/jour ; actifs 328 / 353 / 329 par ~300 créateurs/jour ; x5 17 / 22 / 5 -> CHAUD par les 2 critères.
+- x10 30 sur 2 861 (1,0 %), x100 0 ; tenir 7 j x0,64 ; +60 %/120 s x1,11 ; mortes 2 858 sur 2 861 ; LP retirée 1 071 (délai médian 3,9 min) : la flotte « 7777 » démarre mi-octobre.
+- H2 FAUSSE : x10 1,0 % au lancement = 1,0 % à J+30. Pas d'effet chaîne neuve sur Arc (comme Robinhood).
+- Segment « petites usines » : 29 x10 sur 413 (7,0 %) mais tenir 7 j x0,74 ; les x10 viennent surtout d'un même launchpad (0xb021…97da) avec des trajectoires identiques (pic ~x17, x0,51 à 7 j). Pas une piste.
+
 ## Règle de chaleur (copiée du brief, figée)
 CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 créateurs sur un jour.
 - Actif : pool avec >= 0,1 ETH (~220 $) acheté.

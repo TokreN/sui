@@ -75,29 +75,46 @@ def logs(pm: str, topics: list, de: int, a: int, pas: int, fils: int):
 
 
 def txs(hashes: list[str], fils: int):
-    """Transactions par lots (from, to, nonce)."""
-    res = {}
-    lots = [hashes[i: i + 100] for i in range(0, len(hashes), 100)]
+    """Transactions par lots (from, to, nonce). Relance les manquantes ; cache disque."""
+    import time
+    import urllib.request
+
+    chemin = os.path.join(CACHE_DIR, "txs.json")
+    try:
+        with open(chemin, encoding="utf-8") as f:
+            res = json.load(f)
+    except Exception:
+        res = {}
 
     def un(lot):
-        import urllib.request
         corps = [{"jsonrpc": "2.0", "id": i, "method": "eth_getTransactionByHash", "params": [h]} for i, h in enumerate(lot)]
         req = urllib.request.Request(os.environ["RPC_URL"], data=json.dumps(corps).encode(),
                                      headers={"Content-Type": "application/json", "User-Agent": "filon1"})
         for essai in range(4):
             try:
                 with urllib.request.urlopen(req, timeout=90) as r:
-                    return json.loads(r.read())
+                    rep = json.loads(r.read())
+                return rep if isinstance(rep, list) else []
             except Exception:
-                import time
                 time.sleep(2 * (essai + 1))
         return []
 
-    for rep in en_parallele(un, lots, fils=fils):
-        for x in rep:
-            t = x.get("result")
-            if t:
-                res[t["hash"]] = {"from": t["from"].lower(), "to": (t.get("to") or "").lower(), "nonce": h2i(t["nonce"])}
+    for tour in range(5):
+        manque = [h for h in dict.fromkeys(hashes) if h not in res]
+        if not manque:
+            break
+        lots = [manque[i: i + 20] for i in range(0, len(manque), 20)]
+        for rep in en_parallele(un, lots, fils=max(2, fils // (tour + 1))):
+            for x in rep:
+                t = x.get("result") if isinstance(x, dict) else None
+                if t:
+                    res[t["hash"]] = {"from": t["from"].lower(), "to": (t.get("to") or "").lower(), "nonce": h2i(t["nonce"])}
+        time.sleep(1 + tour)
+    manque = [h for h in hashes if h not in res]
+    if manque:
+        print(f"  transactions introuvables : {len(manque)} sur {len(hashes)}", file=sys.stderr)
+    with open(chemin, "w", encoding="utf-8") as f:
+        json.dump(res, f)
     return res
 
 

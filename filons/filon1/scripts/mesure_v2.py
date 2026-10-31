@@ -41,6 +41,17 @@ def plages(de, a, pas):
     return [(x, min(x + pas - 1, a)) for x in range(de, a + 1, pas)]
 
 
+def logs_surs(filtre, de, a):
+    """eth_getLogs sur [de, a] ; coupe la plage en deux si le RPC échoue (délai, taille)."""
+    try:
+        return rpc("eth_getLogs", [{**filtre, "fromBlock": hex(de), "toBlock": hex(a)}], essais=4)
+    except Exception:
+        if a - de < 20:
+            raise
+        m = (de + a) // 2
+        return logs_surs(filtre, de, m) + logs_surs(filtre, m + 1, a)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--usine", required=True)
@@ -64,7 +75,7 @@ def main():
     print(f"blocs {b0} -> {b1}, suivi -> {b2}", file=sys.stderr)
 
     def un(t):
-        return rpc("eth_getLogs", [{"address": a.usine, "fromBlock": hex(t[0]), "toBlock": hex(t[1]), "topics": [PAIR]}])
+        return logs_surs({"address": a.usine, "topics": [PAIR]}, t[0], t[1])
 
     pairs = {}
     n_pairs = 0
@@ -88,7 +99,7 @@ def main():
         lot = adrs[i: i + a.pairs_par_appel]
 
         def ev(t, lot=lot):
-            return rpc("eth_getLogs", [{"address": lot, "fromBlock": hex(t[0]), "toBlock": hex(t[1]), "topics": [[SWAP, SYNC, BURN, MINT]]}])
+            return logs_surs({"address": lot, "topics": [[SWAP, SYNC, BURN, MINT]]}, t[0], t[1])
 
         for r in en_parallele(ev, plages(b0, b2, a.pas), fils=a.fils):
             for l in r:

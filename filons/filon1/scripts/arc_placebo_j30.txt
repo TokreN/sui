@@ -1,0 +1,27 @@
+arc_placebo_j30 : PoolManager 0x8366a39CC670B4001A1121B8F6A443A643e40951, naissances 2026-10-16T00:00 -> 2026-10-19T00:00 UTC, suivi 168.0 h.
+Pools créés : 2916 ; cotés USD : 2862 ; mesurés : 2862 ; autres cotations ignorées : 54.
+Créations par jour (tous pools) : 10-16 1112, 10-17 899, 10-18 905
+jour | pools | actifs (>=220 $ achetés 24 h) | créateurs des actifs | x5 24 h (>=2 200 $ achetés) | volume achats 24 h | LP retirée < 24 h
+2026-10-16 | 1094 | 328 | 297 | 17 | 3,139,960 $ | 310
+2026-10-17 | 882 | 353 | 335 | 22 | 3,321,897 $ | 328
+2026-10-18 | 886 | 329 | 303 | 5 | 2,992,983 $ | 385
+Créateurs : 1948 ; en série (>= 3 pools) : 40 (513 pools).
+Usines (to de la tx de création) : 0xeed7559b8a6abf64427dc41cb5cc6400109c5d93 1388, 0x6049c9a0e26405c0985f9e3685c87d0ae917f82b 1061, None 190, 0xb021be536808f551b31789422fd28a6c9c6e97da 85, 0x07524ddc8a51ad596a149d9bf76335594baf1dd5 49
+Familles de jetons (4 derniers caractères de l'adresse) : 7777 1018, fee1 36, 10f9 4, d613 4, 64d1 4
+Retrait de LP (>= 50 %) : 1071 sur 2862 pools ; en < 10 min : 1023 ; < 1 h : 1023 ; < 24 h : 1023 ; délai médian 3.9 min
+Stratégie +60 % en 120 s (retrait de LP = -100 %), multiple moyen avant frais : x1.113 (sans les 3 meilleurs : x1.113)
+Grille 7 j sur 2861 pools (tous les pools cotés USD, pas seulement les actifs) :
+  x10 : 30 sur 2861 (1.0 %) ; x100 : 0 sur 2861 (0.0 %)
+  tenir 7 j (retrait de LP = -100 %), multiple moyen : x0.64 ; +60 % en 120 s : x1.11
+  tenir 7 j sans les 3 meilleurs : x0.63
+  mortes à 7 j : 2858 sur 2861
+  par moitié de période, tenir 7 j : x0.71 / x0.57
+  heure 1 (depuis le 1er pool de la fenêtre) : x10 1 sur 45 (2.2 %)
+  heures 2-24 (depuis le 1er pool de la fenêtre) : x10 12 sur 1050 (1.1 %)
+  jour 2 (depuis le 1er pool de la fenêtre) : x10 15 sur 882 (1.7 %)
+  jour 3 (depuis le 1er pool de la fenêtre) : x10 2 sur 884 (0.2 %)
+  x10 créateur unique : 11 sur 1467 (0.7 %) ; en série : 17 sur 512 (3.3 %)
+  x10 usine de masse (>1000) : 1 sur 2448 (0.0 %) ; autres : 29 sur 413 (7.0 %)
+Impact médian à l'entrée : 110 $ 4.4 % ; 450 $ 18.1 %
+Ventes bloquées probables (>= 5 achats, 0 vente >= 5 $ en 24 h) : 3 sur 2862
+Transactions de swap dans les blocs 0 à +2 (médiane par pool) : 1

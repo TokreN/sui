@@ -86,7 +86,7 @@ def get_json(url: str, cache: bool = True, ttl: float | None = None, essais: int
     return None
 
 
-def rpc(methode: str, params: list, url: str | None = None, cache: bool = False, essais: int = 5):
+def rpc(methode: str, params: list, url: str | None = None, cache: bool = False, essais: int = 10):
     """Appel JSON-RPC. URL = RPC_URL (variable d'environnement) par défaut."""
     url = url or os.environ.get("RPC_URL")
     if not url:
@@ -103,6 +103,12 @@ def rpc(methode: str, params: list, url: str | None = None, cache: bool = False,
             with urllib.request.urlopen(req, timeout=90) as r:
                 rep = json.loads(r.read().decode("utf-8"))
             if "error" in rep:
+                msg = str(rep["error"]).lower()
+                limite = rep["error"].get("code") in (-32005, -32029, 429) or "rate" in msg or "too many" in msg or "timeout" in msg or "aborted" in msg
+                if (limite and "range" not in msg or "invalid block range" in msg) and i < essais - 1:
+                    time.sleep(attente)
+                    attente = min(attente * 2, 30)
+                    continue
                 raise RuntimeError(f"RPC {methode}: {rep['error']}")
             res = rep["result"]
             if cache:

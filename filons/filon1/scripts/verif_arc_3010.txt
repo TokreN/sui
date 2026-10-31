@@ -1,0 +1,7 @@
+verif_arc_3010 : 40 pools du 2026-10-30 (1 sur 14), 400 blocs suivis, 3310 tx de swap.
+Achats >= 5 $ dans les blocs +1 à +3 : 0 ; dont >= 100 $ : 0 ; dont extérieurs probables (payeur propre, routeur public, nonce >= 20) : 0.
+Nonce médian de ces premiers acheteurs : n/a.
+Extérieurs entrés dans les blocs +1 à +3 : 0 ; ayant revendu (vente réussie vue) : 0
+Gaz payé par swap (médiane sur 300 reçus) : 0.0028 $ ; tx en échec parmi ces reçus : 0.
+Contrats appelés par ces premiers acheteurs (to) : 
+Limite : les ventes en échec d'autres pools/routeurs et la caisse commune ne sont pas vues ici.
