@@ -1,0 +1,100 @@
+Menu de sorties x sélections, Flap.sh, net de taxes (défaut 9 % si non lu). Décidé avant de compter.
+== 2026-10-30T12:00/2026-10-30T15:00 : 746 jetons cotés mesurés ==
+  [tous] n=746
+      F_60_120s    net moyen x0.867 | sans top3 x0.865 | part >1 4%
+      F_100_600s   net moyen x0.878 | sans top3 x0.874 | part >1 4%
+      H_1h         net moyen x0.867 | sans top3 x0.842 | part >1 1%
+      H_6h         net moyen x0.865 | sans top3 x0.841 | part >1 1%
+      H_24h        net moyen x0.863 | sans top3 x0.838 | part >1 1%
+      T_trail30    net moyen x0.885 | sans top3 x0.868 | part >1 3%
+      T_trail50    net moyen x0.880 | sans top3 x0.856 | part >1 3%
+  [actif>=220$] n=63
+      F_60_120s    net moyen x1.082 | sans top3 x1.059 | part >1 46%
+      F_100_600s   net moyen x1.211 | sans top3 x1.175 | part >1 48%
+      H_1h         net moyen x1.127 | sans top3 x0.840 | part >1 11%
+      H_6h         net moyen x1.118 | sans top3 x0.830 | part >1 8%
+      H_24h        net moyen x1.086 | sans top3 x0.797 | part >1 8%
+      T_trail30    net moyen x1.355 | sans top3 x1.168 | part >1 38%
+      T_trail50    net moyen x1.296 | sans top3 x1.018 | part >1 30%
+  [nouveau créateur] n=79
+      F_60_120s    net moyen x0.955 | sans top3 x0.931 | part >1 23%
+      F_100_600s   net moyen x1.009 | sans top3 x0.972 | part >1 23%
+      H_1h         net moyen x0.905 | sans top3 x0.821 | part >1 3%
+      H_6h         net moyen x0.902 | sans top3 x0.818 | part >1 3%
+      H_24h        net moyen x0.900 | sans top3 x0.816 | part >1 3%
+      T_trail30    net moyen x1.020 | sans top3 x0.942 | part >1 15%
+      T_trail50    net moyen x0.978 | sans top3 x0.881 | part >1 11%
+  [taxe<=1%] n=88
+      F_60_120s    net moyen x0.975 | sans top3 x0.954 | part >1 19%
+      F_100_600s   net moyen x1.011 | sans top3 x0.978 | part >1 18%
+      H_1h         net moyen x1.007 | sans top3 x0.835 | part >1 3%
+      H_6h         net moyen x0.993 | sans top3 x0.826 | part >1 2%
+      H_24h        net moyen x0.988 | sans top3 x0.821 | part >1 2%
+      T_trail30    net moyen x1.086 | sans top3 x0.944 | part >1 14%
+      T_trail50    net moyen x1.084 | sans top3 x0.895 | part >1 11%
+  [nouveau ET taxe<=1%] n=33
+      F_60_120s    net moyen x0.969 | sans top3 x0.911 | part >1 24%
+      F_100_600s   net moyen x1.015 | sans top3 x0.924 | part >1 24%
+      H_1h         net moyen x0.924 | sans top3 x0.827 | part >1 3%
+      H_6h         net moyen x0.922 | sans top3 x0.824 | part >1 3%
+      H_24h        net moyen x0.918 | sans top3 x0.821 | part >1 3%
+      T_trail30    net moyen x1.093 | sans top3 x0.903 | part >1 15%
+      T_trail50    net moyen x1.012 | sans top3 x0.860 | part >1 12%
+  [nouveau ET dev=0] n=38
+      F_60_120s    net moyen x0.913 | sans top3 x0.874 | part >1 8%
+      F_100_600s   net moyen x0.932 | sans top3 x0.874 | part >1 8%
+      H_1h         net moyen x0.864 | sans top3 x0.854 | part >1 0%
+      H_6h         net moyen x0.864 | sans top3 x0.854 | part >1 0%
+      H_24h        net moyen x0.862 | sans top3 x0.853 | part >1 0%
+      T_trail30    net moyen x0.915 | sans top3 x0.861 | part >1 8%
+      T_trail50    net moyen x0.888 | sans top3 x0.861 | part >1 3%
+== 2026-10-29T18:00/2026-10-29T21:00 : 424 jetons cotés mesurés ==
+  [tous] n=424
+      F_60_120s    net moyen x0.875 | sans top3 x0.870 | part >1 6%
+      F_100_600s   net moyen x0.874 | sans top3 x0.867 | part >1 5%
+      H_1h         net moyen x0.942 | sans top3 x0.866 | part >1 1%
+      H_6h         net moyen x0.940 | sans top3 x0.864 | part >1 1%
+      H_24h        net moyen x0.939 | sans top3 x0.863 | part >1 1%
+      T_trail30    net moyen x0.889 | sans top3 x0.864 | part >1 4%
+      T_trail50    net moyen x0.930 | sans top3 x0.858 | part >1 2%
+  [actif>=220$] n=38
+      F_60_120s    net moyen x1.172 | sans top3 x1.139 | part >1 63%
+      F_100_600s   net moyen x1.167 | sans top3 x1.102 | part >1 53%
+      H_1h         net moyen x1.942 | sans top3 x1.116 | part >1 16%
+      H_6h         net moyen x1.914 | sans top3 x1.087 | part >1 13%
+      H_24h        net moyen x1.910 | sans top3 x1.081 | part >1 13%
+      T_trail30    net moyen x1.355 | sans top3 x1.089 | part >1 39%
+      T_trail50    net moyen x1.806 | sans top3 x1.020 | part >1 24%
+  [nouveau créateur] n=72
+      F_60_120s    net moyen x0.991 | sans top3 x0.966 | part >1 22%
+      F_100_600s   net moyen x0.977 | sans top3 x0.936 | part >1 18%
+      H_1h         net moyen x1.443 | sans top3 x1.003 | part >1 7%
+      H_6h         net moyen x1.440 | sans top3 x1.000 | part >1 6%
+      H_24h        net moyen x1.437 | sans top3 x0.997 | part >1 6%
+      T_trail30    net moyen x1.038 | sans top3 x0.914 | part >1 12%
+      T_trail50    net moyen x1.318 | sans top3 x0.898 | part >1 6%
+  [taxe<=1%] n=58
+      F_60_120s    net moyen x1.036 | sans top3 x1.008 | part >1 29%
+      F_100_600s   net moyen x1.014 | sans top3 x0.964 | part >1 22%
+      H_1h         net moyen x1.379 | sans top3 x0.856 | part >1 7%
+      H_6h         net moyen x1.377 | sans top3 x0.853 | part >1 5%
+      H_24h        net moyen x1.374 | sans top3 x0.850 | part >1 5%
+      T_trail30    net moyen x1.095 | sans top3 x0.934 | part >1 19%
+      T_trail50    net moyen x1.429 | sans top3 x0.908 | part >1 9%
+  [nouveau ET taxe<=1%] n=40
+      F_60_120s    net moyen x1.058 | sans top3 x1.018 | part >1 35%
+      F_100_600s   net moyen x1.024 | sans top3 x0.951 | part >1 28%
+      H_1h         net moyen x1.619 | sans top3 x0.860 | part >1 10%
+      H_6h         net moyen x1.616 | sans top3 x0.857 | part >1 8%
+      H_24h        net moyen x1.611 | sans top3 x0.852 | part >1 8%
+      T_trail30    net moyen x1.085 | sans top3 x0.921 | part >1 20%
+      T_trail50    net moyen x1.620 | sans top3 x0.861 | part >1 8%
+  [nouveau ET dev=0] n=30
+      F_60_120s    net moyen x0.917 | sans top3 x0.892 | part >1 3%
+      F_100_600s   net moyen x0.930 | sans top3 x0.892 | part >1 3%
+      H_1h         net moyen x1.262 | sans top3 x0.892 | part >1 3%
+      H_6h         net moyen x1.261 | sans top3 x0.891 | part >1 3%
+      H_24h        net moyen x1.261 | sans top3 x0.891 | part >1 3%
+      T_trail30    net moyen x1.004 | sans top3 x0.891 | part >1 3%
+      T_trail50    net moyen x0.964 | sans top3 x0.891 | part >1 3%
+== Lecture : une piste n'est retenue que si 'sans top3' > 1 sur CHAQUE fenêtre ==

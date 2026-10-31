@@ -136,3 +136,12 @@ CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 
 - Hors ETH : seuils convertis en dollars (220 $ / 2 200 $).
 
 ## 20:29 — Fin. Rapport final poussé (105 lignes). Temps utilisé : ~1 h 10 sur 4 h.
+
+## 20:47 — Relance : menu de sorties x sélections (Flap), test croisé 2 fenêtres — `scripts/exits_flap.py`, `scripts/exits_flap.txt`
+- Demande de Walid : continuer tant qu'aucun truc rentable vérifié sans piège. Règle anti-surajustement fixée avant : retenu seulement si « sans top 3 » > 1 sur les DEUX fenêtres (29/10 et 30/10), et sélection observable à l'entrée.
+- 7 sorties (F_60_120s, F_100_600s, garder 1 h / 6 h / 24 h, stop suiveur 30 % / 50 %) x 6 sélections, net des vraies taxes.
+- Sélections observables à l'entrée testées : nouveau créateur, taxe <= 1 %, nouveau+taxe, nouveau+dev=0, >= 2 tx blocs 0-2, >= 3 tx, dev a acheté >= 5 $ / >= 50 $, nouveau+tx>=2. AUCUNE ne tient (meilleure : dev>=5$ -> +100 %/600 s, x0,992 et x0,962 net, sous 1).
+- Seule case gagnante sur les 2 fenêtres : « actif >= 220 $ » (info du futur, inconnue au bloc +2). Piège, écarté.
+- Conclusion sourcée : pas de fenêtre à l'aveugle sur Flap. Les 3 candidats RPC (Arc, HyperEVM, Flap) sont clos sur chiffres.
+- Genius.fun reste non mesuré : contrat non public, BscScan demande une clé (interdit), archive BSC interdite. Petit ($35 k$/j de frais).
+- Livrable actionnable sans piège : `PROTOCOLE_JOUR1.md` (GO/NO-GO Elysium 09/11 et Zero 30/11, signatures de flotte et de retrait de LP en NO-GO).

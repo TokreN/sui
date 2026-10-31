@@ -3,9 +3,9 @@
 Sources : [L] DefiLlama 31/10 ; [G] GeckoTerminal 31/10 (nouveaux pools sur ~3 j) ; [R] mes mesures RPC, détail dans `scripts/*.txt` ; [W] web, liens dans `JOURNAL.md`.
 
 ## 1. Pour Walid
-1. Rien de neuf n'est à la fois chaud et armable. Arc (public le 16/09) et Flap.sh (BSC) passent la règle de chaleur. Mais Arc est une flotte qui fabrique le volume puis retire la LP (4 690 pools sur 6 151 en ~4,5 min), et Flap ne rend rien à l'entrée aveugle (x0,87 à x0,88 net, taxes de 9 % le plus souvent).
-2. Prépare Elysium (09/11, déjà fait) et Zero de LayerZero (30/11, seule autre chaîne neuve datée) : ZRO pour le gaz, `mesure_v4.py` / `mesure_v2.py` prêts, RPC officiel le jour J. Attente faible : Arc, L1 institutionnelle comparable, n'a fait que 1,0 % de x10 au lancement, autant qu'à J+30.
-3. Avant le 09/11 pour Elysium, avant le 30/11 pour Zero. Sur Elysium, guette les contrats 0x49151b65…06bd et 0xb4a9c4e6…240a : ce sont eux qui fabriquent les mooners de HyperSwap V2.
+1. **Rien de neuf n'est à la fois chaud, réel et rentable à l'aveugle.** Mesuré au RPC : Arc = flotte qui fabrique le volume puis retire la LP (4 690 pools sur 6 151 en ~4,5 min) ; HyperEVM = mooners d'un seul opérateur ; Flap = médiane plate, queue au créateur en série. Sur Flap, testé 7 sorties x 6 sélections sur 2 fenêtres : la seule case gagnante exige de savoir d'avance qui sera « actif » (info du futur). Pas de plan « achète ça » honnête aujourd'hui.
+2. Le seul vrai jeu est à venir : **Elysium (09/11)** et **Zero de LayerZero (30/11)**, les deux seules chaînes neuves datées. Plan complet dans `PROTOCOLE_JOUR1.md` : décision **GO/NO-GO** le jour 1, avec les signatures de flotte et de retrait de LP en déclencheurs de NO-GO. Ce n'est pas une promesse de gain, c'est une règle qui dit quand ne pas jouer.
+3. Dates : avant le 09/11 (Elysium), avant le 30/11 (Zero). Sur Elysium surtout, guette les contrats 0x49151b65…06bd et 0xb4a9c4e6…240a : ce sont eux qui fabriquaient les mooners de HyperSwap V2 (même écosystème Hyperliquid).
 
 ## 2. Lieux examinés (30 derniers jours, hors terrains couverts)
 | Lieu | Né le | Lancements actifs / j | Créateurs | x5 / j | Volume / j | 7 j / 30 j | Verdict |
@@ -71,16 +71,14 @@ Datés mais pas des lieux neufs : Base Denim le 05/11 (blocs 200 ms) ; Initia re
 - Verdict : pas d'effet chaîne neuve (x10 1,0 % au lancement comme à J+30), puis volume fabriqué. Rejeté.
 
 **C2. Flap.sh sur BSC** (2 fenêtres de 3 h : 30/10 12-15 h et 29/10 18-21 h UTC, suivi 24 h, tous les jetons créés) [R]
-- 1 100 et 648 jetons ; actifs 62 et 38, par 32 et 30 créateurs ; x5 3 et 5 (sur la courbe seulement, donc minorants). CHAUD.
-- 97 et 99 créateurs. Un seul a fait 143 jetons en 3 h et porte les 4 plus gros x24 du 30/10 : usine de masse.
-- Taxes lues sur le Portal (`taxes_flap.txt`) : 9 % à l'achat et 9 % à la vente pour 380 jetons sur 778 (30/10) et 206 sur 490 (29/10).
-- « +60 % en 120 s », tous jetons : x1,005 et x1,012 brut ; x0,869 et x0,882 net de frais (1 % x 2) et taxes.
-- Créateur sans jeton antérieur dans la fenêtre (causal) : x1,028 et x1,052 brut, x0,951 et x0,983 net (sans top 3 : x0,932 et x0,965), ~100 jetons chacun.
-- Taxe <= 1 % (connue à la création) : x0,977 et x1,029 net (sans top 3 : x0,958 et x1,003). Pas robuste d'une fenêtre à l'autre.
-- Aller-retour : frais 1 % x 2 + taxes ci-dessus + gaz 2 x 0,0035 $ ; impact sur la courbe non calculé.
-- Acheteurs des 8 plus gros : 12 à 15 payeurs distincts sur les 15 premiers achats, contrats publics de Flap, nonce médian ~1 000. Activité réelle.
-- Bots dans les blocs 0 à +2 : médiane 1 tx. x10, x100, tenir 7 j : non mesurés (le RPC public BSC ne sert que ~3 jours de logs).
-- Verdict : réel mais sans fenêtre. Pistes « nouveau créateur » et « taxe basse » rejetées sur ces chiffres : négatives ou nulles nettes.
+- 1 100 et 648 jetons ; actifs 62 et 38, par 32 et 30 créateurs ; x5 3 et 5 (sur la courbe, minorants). CHAUD, acheteurs réels (12 à 15 payeurs distincts sur les 15 premiers achats des plus gros, nonce médian ~1 000).
+- Médiane x24 = 1,0, p90 = 1,02 : 9 jetons sur 10 ne montent pas de 2 %. La queue (20 sur 778 font x2+) appartient surtout à un créateur en série (143 jetons en 3 h, les 4 plus gros x24).
+- Taxes lues sur le Portal (`taxes_flap.txt`) : 9 % achat / 9 % vente pour la moitié des jetons.
+- **Menu de 7 sorties x 6 sélections, sur les 2 fenêtres indépendamment** (`exits_flap.txt`, `exits_flap.py`), net de taxes. Règle fixée d'avance : retenu seulement si « sans top 3 » > 1 sur CHAQUE fenêtre.
+  - Observable à l'entrée (nouveau créateur, taxe <= 1 %, dev a acheté, >= 2 tx aux blocs 0-2, combinaisons) : **aucune case** ne tient. Meilleure (dev >= 5 $ -> +100 %/600 s) : x0,992 et x0,962 net, donc perte.
+  - Seule case gagnante sur les 2 fenêtres : sélection « actif >= 220 $ » (F_100_600s sans top 3 x1,175 et x1,102). Mais « actif » = achats sur 24 h = information du futur ; inconnue au bloc +2, et l'attendre déplace l'entrée. Piège, pas une stratégie.
+- x10, x100, tenir 7 j : non mesurés (RPC public BSC ne sert que ~3 jours de logs).
+- Verdict : réel mais **pas de fenêtre à l'aveugle**. Rejeté sur chiffres sourcés et test croisé 2 fenêtres.
 
 **C3. HyperEVM, HyperSwap V2** (naissances 23-30/10, suivi 24 h) [R]
 - 11 pairs créés en 8 jours, 6 cotés WHYPE, tous les 29 et 30/10. Pas CHAUD (< 1 lancement / j).
