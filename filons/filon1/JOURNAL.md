@@ -158,3 +158,10 @@ CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 
 - Meilleures moyennes : T=600 s, Y=200 $, +60 %/120 s : x0,960 et x0,942 net (sans top 3 x0,953 / x0,936). « Déjà fort » (Y=3 000 $ à 60 s) : x0,841 / x1,068 (n=16), sans top 3 x0,775 / x0,960.
 - Garder 1 h après un décollage est le pire (x0,50 à x0,93 sans top 3) : les décollages retombent dans l'heure.
 - H8 FAUSSE. Mon impact d'entrée n'est pas compté : la réalité est pire.
+
+## Hypothèse H9 (écrite AVANT de compter) — migrations Flap vers le DEX
+- Idée : les migrations pump.fun faisaient +19,6 %/trade en septembre (brief). Analogue BSC jamais mesuré : le jeton Flap finit sa courbe et part sur un pool DEX.
+- Instrument : Portal.getTokenV8Safe(token) -> mot 14 = adresse du pool DEX (0 si pas migré). Pool V2 : événements Mint / Sync / Swap. Moment de migration = 1er Mint du pool. Entrée = fin du bloc de migration + 2, prix par Sync.
+- Univers : TOUS les jetons créés dans les fenêtres 30/10 00-03 h et 30/10 12-15 h (cache momentum_*), pas seulement les gagnants.
+- Sorties : +60 %/120 s, +100 %/600 s, stop suiveur 30 % (sinon prix à 24 h), garder 1 h, garder 24 h. Net : frais PancakeSwap V2 0,25 % x 2 + taxe du jeton (lue) x 2.
+- Critère : rentable si « sans top 3 » > 1 sur les 2 fenêtres réunies ET sur chacune ; n >= 10 migrations par fenêtre, sinon « échantillon trop petit ».
