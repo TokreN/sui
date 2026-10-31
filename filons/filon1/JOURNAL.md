@@ -27,6 +27,37 @@ Candidat 1 = Arc (L1 Circle, gaz en USDC, mainnet public 16/09/2026).
 - Instrument : événements Initialize et Swap du PoolManager Uniswap V4 d'Arc via RPC public. Contrôle positif d'abord : le même instrument sur le PoolManager V4 d'Ethereum doit rendre des pools et des swaps.
 - Si l'échantillon est trop gros pour ici : script livré, mesure sur échantillon, biais écrit.
 
+## 19:36-19:40 — Contrôle positif de l'instrument V4
+- Ethereum (PoolManager 0x0000…4444c5dc…8A90) : 220 Initialize sur 1 000 blocs. Sujets d'événements justes.
+- Arc, pool HALLOWEEN/USDC (0x7a0d6c…) : mon script lit 102 achats / 57 ventes / 12 409 $ achetés ; GeckoTerminal 11 min plus tôt : 85 / 55 / 15 424 $ de volume. Cohérent.
+- Découverte sur ce contrôle (18:30-19:30 UTC, 14 pools) : 14 sur 14 ont eu la LP retirée (>= 50 %), délai médian 4 min. Le créateur de HALLOWEEN ajoute la LP pleine plage via le PositionManager, la retire 722 blocs (~6 min) plus tard via le contrat 0x934412cf…. 14 créateurs distincts pour 14 pools, jetons à suffixe « …777 ».
+
+## 19:41 — Hypothèse H3 (avant les mesures complètes)
+- H3 : sur Arc, « acheter à la fin du bloc +2, vendre à +60 % si atteint en 120 s, sinon sortir à 120 s » (retrait de LP avant la sortie = −100 %) donne un multiple moyen > 1,10 avant frais sur les pools nés du 23 au 30/10, et reste > 1,03 (coût aller-retour ~2,7 % : impact 2 x 1,1 % à 110 $ + frais LP 2 x 0,25 %) sans les 3 meilleurs et sur chaque moitié de période.
+- Limite connue à l'avance : sans vérifier la « caisse commune », je ne peux pas dire si les acheteurs sont extérieurs. Je vérifie le payeur (from), le routeur et le nonce sur un échantillon.
+
+## 19:45 — Candidat 2 = Flap.sh sur BSC (hors terrains couverts : seul four.meme a été rejeté sur BSC)
+- Instrument : événements du Portal 0xe2cE…9De0 (TokenCreated / TokenBought / TokenSold / TokenQuoteSet), sujets vérifiés par keccak sur des logs réels. Aucun champ indexé : je lis tous les trades de la fenêtre.
+- Échantillon (pas de grosse collecte ici) : naissances du 30/10 12:00-15:00 UTC, suivi 24 h. Le script tourne sur n'importe quelle fenêtre chez toi.
+- H4 : Flap est CHAUD. Critère : dans ces 3 h seules, >= 50 jetons actifs (>= 220 $ achetés en 24 h) par >= 10 créateurs, ou un rythme de x5 >= 3/jour.
+- H5 : une fenêtre existe pour un extérieur. Critère : « +60 % en 120 s » depuis la fin du bloc +2 donne > x1,10 avant frais sur TOUS les jetons cotés (pas seulement les actifs), et > x1,10 sans les 3 meilleurs. Sinon : même verdict que four.meme.
+- Test « mooners fabriqués » : achat du créateur dans la tx de création, et nombre de tx dans les blocs 0 à +2, chez les x5 contre tous.
+
+## 19:47 — Résultat Flap (30/10 12:00-15:00 UTC, suivi 24 h) — voir `scripts/flap_3010.txt`
+- 1 100 jetons créés en 3 h ; 778 cotés BNB/USDT mesurés ; 62 actifs par 32 créateurs -> H4 VRAIE (CHAUD par la règle).
+- x5 : 3 en 3 h (sur la courbe, minorant). 97 créateurs pour 1 100 jetons ; 1 créateur = 143 jetons et porte les 4 plus gros x24.
+- H5 FAUSSE : « +60 % en 120 s » sur tous les jetons = x1,005 avant frais (frais lus 1 % par trade + taxe des jetons 7777 non lue).
+- Piste à revérifier (petit échantillon) : créateurs uniques, 66 jetons, x1,048 avant frais.
+
+## 19:48 — Correction d'instrument (Arc)
+- Le lancement d'Arc (16-19/09) compte 174 229 pools en 72 h ; la devise dominante est 0x3600…0000 (USDC ERC-20, 6 décimales), pas le natif 0x0. Mon 1er lancement ne voyait que ~5 % des pools : arrêté, relancé avec les 2 formes d'USDC et un échantillon uniforme de 3 000 pools (1 sur k dans l'ordre des blocs, sans regarder la suite).
+- Le run « semaine » (23-30/10) en cours ne prend que l'USDC natif : à relancer avec les 2 formes.
+
+## 19:50 — Candidat 3 = HyperEVM, usine HyperSwap V2 (0x7244…1c48)
+- Vu dans GeckoTerminal (29-31/10) : KLEOS +5 224 %, ELYSX +2 367 %, ICECAT +1 948 % en 24 h, ~400 acheteurs chacun ; réserves restantes 2 à 4 $ pour 2 d'entre eux (LP retirée ?).
+- H6 : HyperSwap V2 est CHAUD par la règle des x5 (>= 3 x5 par jour, 3 jours de suite) sur les naissances du 23 au 30/10. Critère : table par jour de `hyperswap_v2.txt`.
+- H7 : « +60 % en 120 s » > x1,10 avant frais sur TOUS les pairs cotés WHYPE, et > x1,03 sans les 3 meilleurs.
+
 ## Règle de chaleur (copiée du brief, figée)
 CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 créateurs sur un jour.
 - Actif : pool avec >= 0,1 ETH (~220 $) acheté.
