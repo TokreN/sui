@@ -188,3 +188,9 @@ CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 
 - Motif récurrent repéré APRÈS coup (donc exploratoire, pas une trouvaille) : garder 1 h après la migration -> moyenne x1,667 (étude) et x1,218 (contrôle), portée par 2-3 jetons (x24 et x18 en 1 h) ; médiane x0,22 et x0,42. Profil loterie.
 - H9c (exploratoire, à confirmer sur données NEUVES) : « acheter à la migration, garder 1 h » a une espérance > 1. Contrôle neuf = jetons créés après 23:30 UTC le 31/10, jugés vers 08:00 UTC le 01/11. Critère : moyenne nette (impact compris) > 1 sur ce contrôle neuf, et probabilité bootstrap > 90 % que la moyenne regroupée soit > 1.
 - Genius.fun : publicnode refuse les recherches sans adresse ; bsc.rpc.blxrbdn.com (public, sans clé) les accepte.
+
+## 23:40 — Pistes 2 et 3, puis arrêt de la recherche
+- Genius.fun : recensement des créations de jetons sur BSC (~30 min, RPC public bloXroute sans clé). 0 jeton en « 6666 », 0 en « 4444 » ; contrôle positif : 65 jetons Flap en « 7777 ». four.meme (0x5c95…762b, terrain rejeté) crée maintenant en « ffff ». Contrat Genius non identifié.
+- Frontier (Robinhood, RPC public) : Blockscout bloqué par un anti-robot ; aucune des 15 signatures candidates de CoinDeployed sur 6 h. Non mesuré (terrain couvert, petit).
+- Décision : arrêt de la recherche, heures restantes non utilisées. Toutes les pistes mesurables gratuitement sont closes sur chiffres. Multiplier les essais fabriquerait surtout des faux positifs (surajustement) et pousserait vers des mises perdantes.
+- H9c (« acheter à la migration, garder 1 h ») reste NON confirmée : profil loterie (médiane x0,22 à x0,42, gain porté par 2 jetons sur 47). Non recommandée.

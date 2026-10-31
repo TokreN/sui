@@ -5,7 +5,7 @@ Sources : [L] DefiLlama 31/10 ; [G] GeckoTerminal 31/10 (nouveaux pools sur ~3 j
 ## 1. Pour Walid
 1. **Rien de neuf n'est à la fois chaud, réel et rentable à l'aveugle.** Mesuré au RPC : Arc = flotte qui fabrique le volume puis retire la LP (4 690 pools sur 6 151 en ~4,5 min) ; HyperEVM = mooners d'un seul opérateur ; Flap = médiane plate, queue au créateur en série. Sur Flap, testé 7 sorties x 6 sélections sur 2 fenêtres : la seule case gagnante exige de savoir d'avance qui sera « actif » (info du futur). Pas de plan « achète ça » honnête aujourd'hui.
 2. Le seul vrai jeu est à venir : **Elysium (09/11)** et **Zero de LayerZero (30/11)**, les deux seules chaînes neuves datées. Plan complet dans `PROTOCOLE_JOUR1.md` : décision **GO/NO-GO** le jour 1, avec les signatures de flotte et de retrait de LP en déclencheurs de NO-GO. Ce n'est pas une promesse de gain, c'est une règle qui dit quand ne pas jouer.
-3. Dates : avant le 09/11 (Elysium), avant le 30/11 (Zero). Sur Elysium surtout, guette les contrats 0x49151b65…06bd et 0xb4a9c4e6…240a : ce sont eux qui fabriquaient les mooners de HyperSwap V2 (même écosystème Hyperliquid).
+3. Dates : avant le 09/11 (Elysium), avant le 30/11 (Zero). Signal d'alarme sur Elysium : si les premiers achats passent par 0x49151b65…06bd ou 0xb4a9c4e6…240a (les contrats qui fabriquaient les mooners de HyperSwap V2), c'est une flotte : NO-GO.
 
 ## 2. Lieux examinés (30 derniers jours, hors terrains couverts)
 | Lieu | Né le | Lancements actifs / j | Créateurs | x5 / j | Volume / j | 7 j / 30 j | Verdict |
@@ -103,3 +103,5 @@ Limites communes : créateur = expéditeur de la tx de création (550 inconnus s
 - Carte des 30 jours hors Arc, Flap et HyperSwap V2 : GeckoTerminal ne rend que ~3 jours de nouveaux pools. Le reste repose sur les volumes et frais DefiLlama, pas sur un comptage de pools.
 - Zero : testnet, RPC, ordre des transactions et DEX : rien de public au 31/10.
 - Frontier (Robinhood, pic le 29/10) : terrain couvert, non mesuré ici.
+- Genius.fun : 0 jeton « 6666 » créé sur BSC en 30 min le 31/10 vers 23:30 UTC (contrôle : 65 jetons Flap vus) ; contrat non identifié.
+- Frontier (Robinhood) : contrat introuvable (explorateur protégé par un anti-robot, signature CoinDeployed inconnue) ; non mesuré.
