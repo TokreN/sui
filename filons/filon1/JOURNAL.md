@@ -145,3 +145,9 @@ CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 
 - Conclusion sourcée : pas de fenêtre à l'aveugle sur Flap. Les 3 candidats RPC (Arc, HyperEVM, Flap) sont clos sur chiffres.
 - Genius.fun reste non mesuré : contrat non public, BscScan demande une clé (interdit), archive BSC interdite. Petit ($35 k$/j de frais).
 - Livrable actionnable sans piège : `PROTOCOLE_JOUR1.md` (GO/NO-GO Elysium 09/11 et Zero 30/11, signatures de flotte et de retrait de LP en NO-GO).
+
+## Hypothèse H8 (écrite AVANT de compter) — « acheter ceux qui décollent déjà » (momentum), Flap
+- Idée de Walid : n'acheter que le top. Version sans futur : entrer au temps T après la création SEULEMENT si les achats cumulés (trades >= 5 $) depuis la création atteignent Y $ ; prix d'entrée = état du prix à T (donc plus cher).
+- Grille fixée : T ∈ {60 s, 180 s, 600 s} x Y ∈ {200 $, 1 000 $, 3 000 $} = 9 filtres ; sorties : +60 %/120 s, +100 %/600 s, stop suiveur 30 %, garder 1 h (temps comptés depuis l'entrée). Net de frais 1 % x 2 et des taxes lues.
+- Critère : une case n'est retenue que si « sans top 3 » > 1 sur LES DEUX fenêtres (30/10 00-03 h et 30/10 12-15 h UTC), avec n >= 15 par fenêtre. 36 cases testées : risque de faux positif par hasard, d'où l'exigence des 2 fenêtres.
+- Limite connue d'avance : mon propre impact à l'entrée n'est pas compté (résultat optimiste).
