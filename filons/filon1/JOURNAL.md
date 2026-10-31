@@ -194,3 +194,9 @@ CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 
 - Frontier (Robinhood, RPC public) : Blockscout bloqué par un anti-robot ; aucune des 15 signatures candidates de CoinDeployed sur 6 h. Non mesuré (terrain couvert, petit).
 - Décision : arrêt de la recherche, heures restantes non utilisées. Toutes les pistes mesurables gratuitement sont closes sur chiffres. Multiplier les essais fabriquerait surtout des faux positifs (surajustement) et pousserait vers des mises perdantes.
 - H9c (« acheter à la migration, garder 1 h ») reste NON confirmée : profil loterie (médiane x0,22 à x0,42, gain porté par 2 jetons sur 47). Non recommandée.
+
+## 23:55 — « Virer les pertes » : meilleur filtre choisi sur un jour, vérifié sur un autre (données en cache)
+- Choisi sur le 30/10 12-15 h parmi 8 filtres visibles avant l'achat x 4 reventes (critère : meilleur « sans top 3 ») : « créateur nouveau + taxe <= 3 % », revente +100 % en 10 min -> x1,045 (sans top 3 x0,999), n=61.
+- Vérifié sur le 29/10 18-21 h (jamais utilisé pour choisir) : x1,006 (sans top 3 x0,957), n=59. Sans filtre le même jour : x0,889.
+- Impact de ton propre achat, mesuré sur les vrais achats des 10 premières minutes : 3,2 % pour ~105 € (2 347 achats), 10,8 % pour ~420 € (212 achats), à l'achat et à la revente.
+- Net avec impact : x0,943 à 105 € (-6,0 € par achat) ; x0,800 à 420 € (-84 € par achat). Le filtre réduit la perte (-11,6 € -> -6 € à 105 €) mais ne rend pas rentable.
