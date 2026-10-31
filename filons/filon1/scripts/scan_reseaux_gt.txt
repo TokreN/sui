@@ -1,0 +1,46 @@
+GeckoTerminal new_pools, 2026-10-31 19:32 UTC. Approximations : voir l'en-tête du script.
+reseau | pools lus | fenêtre (j) | pools/j | nés <24h | actifs~ <24h | x5~ <24h | vol 24h des nés <24h | max acheteurs | DEX principaux
+bsc | 200 | 0.08 | 2427.2 | 200 | 109 | 2 | 4,631,255 $ | 85 | [('pancakeswap_v2', 124), ('four-meme', 47), ('uniswap-v4-bsc', 21), ('pancakeswap-infinity-clmm', 3)]
+arc | 200 | 0.30 | 668.6 | 200 | 158 | 0 | 2,217,123 $ | 85 | [('uniswap-v4-arc', 197), ('uniswap-v3-arc', 2), ('argus', 1)]
+monad | 200 | 1.63 | 122.4 | 0 | 0 | 0 | 0 $ | 0 | [('uniswap-v2-monad', 200)]
+ton | 177 | 2.99 | 59.2 | 48 | 5 | 1 | 14,436 $ | 148 | [('uranus', 76), ('stonfi-v2', 57), ('dedust-v2', 39), ('dedust', 3)]
+hyperevm | 87 | 2.93 | 29.7 | 21 | 8 | 2 | 233,074 $ | 411 | [('project-x', 72), ('hyperswap-v3', 8), ('hyperswap-v2', 7)]
+x-layer | 81 | 2.98 | 27.2 | 28 | 27 | 0 | 45,721 $ | 19 | [('uniswap-v3-x-layer', 75), ('uniswap-v4-x-layer', 6)]
+igra | 1 | 0.04 | 24.0 | 1 | 0 | 0 | 0 $ | 2 | [('kaspacom-igra', 1)]
+near | 37 | 2.95 | 12.6 | 10 | 6 | 0 | 28,320 $ | 1 | [('near-intents', 37)]
+avax | 30 | 2.88 | 10.4 | 3 | 0 | 0 | 3 $ | 1 | [('uniswap-v4-avalanche', 29), ('uniswap-v3-avalanche', 1)]
+ink | 17 | 2.91 | 5.8 | 10 | 1 | 0 | 2,033 $ | 6 | [('uniswap-v4-ink', 16), ('aero-slipstream-ink', 1)]
+sui-network | 16 | 3.00 | 5.3 | 3 | 0 | 0 | 7 $ | 2 | [('cetus', 15), ('turbos-finance', 1)]
+aleo | 6 | 1.34 | 4.5 | 0 | 0 | 0 | 0 $ | 0 | [('shield-swap', 6)]
+sonic | 10 | 2.48 | 4.0 | 1 | 0 | 0 | 29 $ | 5 | [('shadow-exchange-legacy', 7), ('spookyswap-v2-sonic', 3)]
+unichain | 3 | 2.26 | 1.3 | 0 | 0 | 0 | 0 $ | 0 | [('uniswap-v4-unichain', 2), ('uniswap-v3-unichain', 1)]
+megaeth | 1 | 2.66 | 0.4 | 0 | 0 | 0 | 0 $ | 0 | [('kumbaya', 1)]
+0g | 1 | 2.74 | 0.4 | 0 | 0 | 0 | 0 $ | 0 | [('bond', 1)]
+tempo | ERREUR aucun pool
+fluent | ERREUR aucun pool
+citrea | ERREUR aucun pool
+mezo | ERREUR aucun pool
+bot-chain | ERREUR aucun pool
+doma | ERREUR aucun pool
+tron | ERREUR aucun pool
+aptos | ERREUR aucun pool
+berachain | ERREUR aucun pool
+abstract | ERREUR aucun pool
+sei-evm | ERREUR aucun pool
+stable | ERREUR aucun pool
+zigchain | ERREUR aucun pool
+katana | ERREUR aucun pool
+soneium | ERREUR aucun pool
+somnia | ERREUR aucun pool
+pharos | ERREUR aucun pool
+fogo | ERREUR aucun pool
+story | ERREUR aucun pool
+plume-network | ERREUR aucun pool
+initia | ERREUR aucun pool
+hemi | ERREUR aucun pool
+movement | ERREUR aucun pool
+injective | ERREUR aucun pool
+stacks | ERREUR aucun pool
+rise | ERREUR aucun pool
+sonic-svm | ERREUR aucun pool
+eclipse | ERREUR aucun pool
