@@ -151,3 +151,10 @@ CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 
 - Grille fixée : T ∈ {60 s, 180 s, 600 s} x Y ∈ {200 $, 1 000 $, 3 000 $} = 9 filtres ; sorties : +60 %/120 s, +100 %/600 s, stop suiveur 30 %, garder 1 h (temps comptés depuis l'entrée). Net de frais 1 % x 2 et des taxes lues.
 - Critère : une case n'est retenue que si « sans top 3 » > 1 sur LES DEUX fenêtres (30/10 00-03 h et 30/10 12-15 h UTC), avec n >= 15 par fenêtre. 36 cases testées : risque de faux positif par hasard, d'où l'exigence des 2 fenêtres.
 - Limite connue d'avance : mon propre impact à l'entrée n'est pas compté (résultat optimiste).
+
+## 21:54 — Résultat H8 (momentum) — `scripts/momentum_flap.txt`
+- Fenêtres 30/10 00-03 h (796 jetons) et 30/10 12-15 h (1 100 jetons), suivi 24 h, taxes lues.
+- 36 cases (T ∈ 60/180/600 s x Y ∈ 200/1 000/3 000 $ x 4 sorties) : AUCUNE ne tient (« sans top 3 » < 1 partout, sur les 2 fenêtres).
+- Meilleures moyennes : T=600 s, Y=200 $, +60 %/120 s : x0,960 et x0,942 net (sans top 3 x0,953 / x0,936). « Déjà fort » (Y=3 000 $ à 60 s) : x0,841 / x1,068 (n=16), sans top 3 x0,775 / x0,960.
+- Garder 1 h après un décollage est le pire (x0,50 à x0,93 sans top 3) : les décollages retombent dans l'heure.
+- H8 FAUSSE. Mon impact d'entrée n'est pas compté : la réalité est pire.

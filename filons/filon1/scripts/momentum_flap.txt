@@ -1,0 +1,39 @@
+Momentum Flap (hypothèse H8) : entrée à T si achats cumulés >= Y ; net de frais et taxes ; impact d'entrée non compté.
+Retenu seulement si 'sans top3' > 1 sur CHAQUE fenêtre avec n >= 15.
+T= 60s Y= 200$ F_60_120s   | 30/10 00h n=187 moy x0.929 s3 x0.918 | 30/10 12h n=95 moy x0.944 s3 x0.924
+T= 60s Y= 200$ F_100_600s  | 30/10 00h n=187 moy x0.916 s3 x0.899 | 30/10 12h n=95 moy x0.924 s3 x0.892
+T= 60s Y= 200$ T_trail30   | 30/10 00h n=187 moy x0.899 s3 x0.877 | 30/10 12h n=95 moy x0.919 s3 x0.879
+T= 60s Y= 200$ H_1h        | 30/10 00h n=187 moy x0.865 s3 x0.836 | 30/10 12h n=95 moy x0.787 s3 x0.760
+T= 60s Y=1000$ F_60_120s   | 30/10 00h n=69 moy x0.900 s3 x0.871 | 30/10 12h n=40 moy x0.981 s3 x0.936
+T= 60s Y=1000$ F_100_600s  | 30/10 00h n=69 moy x0.926 s3 x0.880 | 30/10 12h n=40 moy x0.921 s3 x0.842
+T= 60s Y=1000$ T_trail30   | 30/10 00h n=69 moy x0.953 s3 x0.898 | 30/10 12h n=40 moy x0.909 s3 x0.865
+T= 60s Y=1000$ H_1h        | 30/10 00h n=69 moy x0.875 s3 x0.795 | 30/10 12h n=40 moy x0.718 s3 x0.656
+T= 60s Y=3000$ F_60_120s   | 30/10 00h n=25 moy x0.841 s3 x0.775 | 30/10 12h n=16 moy x1.068 s3 x0.960
+T= 60s Y=3000$ F_100_600s  | 30/10 00h n=25 moy x0.778 s3 x0.692 | 30/10 12h n=16 moy x0.981 s3 x0.774
+T= 60s Y=3000$ T_trail30   | 30/10 00h n=25 moy x0.867 s3 x0.805 | 30/10 12h n=16 moy x0.932 s3 x0.875
+T= 60s Y=3000$ H_1h        | 30/10 00h n=25 moy x0.795 s3 x0.640 | 30/10 12h n=16 moy x0.682 s3 x0.496
+T=180s Y= 200$ F_60_120s   | 30/10 00h n=192 moy x0.943 s3 x0.933 | 30/10 12h n=100 moy x0.929 s3 x0.913
+T=180s Y= 200$ F_100_600s  | 30/10 00h n=192 moy x0.918 s3 x0.902 | 30/10 12h n=100 moy x0.927 s3 x0.897
+T=180s Y= 200$ T_trail30   | 30/10 00h n=192 moy x0.918 s3 x0.889 | 30/10 12h n=100 moy x0.940 s3 x0.891
+T=180s Y= 200$ H_1h        | 30/10 00h n=192 moy x0.899 s3 x0.870 | 30/10 12h n=100 moy x0.886 s3 x0.813
+T=180s Y=1000$ F_60_120s   | 30/10 00h n=76 moy x0.956 s3 x0.932 | 30/10 12h n=46 moy x0.914 s3 x0.877
+T=180s Y=1000$ F_100_600s  | 30/10 00h n=76 moy x0.930 s3 x0.889 | 30/10 12h n=46 moy x0.909 s3 x0.840
+T=180s Y=1000$ T_trail30   | 30/10 00h n=76 moy x0.976 s3 x0.903 | 30/10 12h n=46 moy x0.939 s3 x0.851
+T=180s Y=1000$ H_1h        | 30/10 00h n=76 moy x0.927 s3 x0.852 | 30/10 12h n=46 moy x0.830 s3 x0.694
+T=180s Y=3000$ F_60_120s   | 30/10 00h n=31 moy x0.944 s3 x0.892 | 30/10 12h n=20 moy x0.873 s3 x0.795
+T=180s Y=3000$ F_100_600s  | 30/10 00h n=31 moy x0.823 s3 x0.787 | 30/10 12h n=20 moy x0.875 s3 x0.753
+T=180s Y=3000$ T_trail30   | 30/10 00h n=31 moy x0.951 s3 x0.845 | 30/10 12h n=20 moy x0.822 s3 x0.748
+T=180s Y=3000$ H_1h        | 30/10 00h n=31 moy x0.862 s3 x0.744 | 30/10 12h n=20 moy x0.627 s3 x0.561
+T=600s Y= 200$ F_60_120s   | 30/10 00h n=192 moy x0.960 s3 x0.953 | 30/10 12h n=103 moy x0.942 s3 x0.936
+T=600s Y= 200$ F_100_600s  | 30/10 00h n=192 moy x0.947 s3 x0.936 | 30/10 12h n=103 moy x0.917 s3 x0.901
+T=600s Y= 200$ T_trail30   | 30/10 00h n=192 moy x0.946 s3 x0.923 | 30/10 12h n=103 moy x0.921 s3 x0.906
+T=600s Y= 200$ H_1h        | 30/10 00h n=192 moy x0.930 s3 x0.913 | 30/10 12h n=103 moy x0.875 s3 x0.863
+T=600s Y=1000$ F_60_120s   | 30/10 00h n=81 moy x0.961 s3 x0.945 | 30/10 12h n=51 moy x0.927 s3 x0.913
+T=600s Y=1000$ F_100_600s  | 30/10 00h n=81 moy x0.941 s3 x0.917 | 30/10 12h n=51 moy x0.866 s3 x0.848
+T=600s Y=1000$ T_trail30   | 30/10 00h n=81 moy x0.967 s3 x0.913 | 30/10 12h n=51 moy x0.889 s3 x0.861
+T=600s Y=1000$ H_1h        | 30/10 00h n=81 moy x0.919 s3 x0.877 | 30/10 12h n=51 moy x0.800 s3 x0.777
+T=600s Y=3000$ F_60_120s   | 30/10 00h n=37 moy x0.979 s3 x0.943 | 30/10 12h n=27 moy x0.922 s3 x0.892
+T=600s Y=3000$ F_100_600s  | 30/10 00h n=37 moy x0.970 s3 x0.919 | 30/10 12h n=27 moy x0.813 s3 x0.775
+T=600s Y=3000$ T_trail30   | 30/10 00h n=37 moy x1.036 s3 x0.920 | 30/10 12h n=27 moy x0.846 s3 x0.822
+T=600s Y=3000$ H_1h        | 30/10 00h n=37 moy x0.954 s3 x0.861 | 30/10 12h n=27 moy x0.700 s3 x0.666
+Cases qui tiennent sur les 2 fenêtres : aucune
