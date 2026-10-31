@@ -134,3 +134,5 @@ CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 
 - Actif : pool avec >= 0,1 ETH (~220 $) acheté.
 - x5 : x5 en 24 h depuis la fin du bloc +2, compté seulement si >= 1 ETH (~2 200 $) acheté. > x10 000 = artefact, ignoré.
 - Hors ETH : seuils convertis en dollars (220 $ / 2 200 $).
+
+## 20:29 — Fin. Rapport final poussé (105 lignes). Temps utilisé : ~1 h 10 sur 4 h.

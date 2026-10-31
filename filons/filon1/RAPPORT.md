@@ -98,7 +98,7 @@ Limites communes : créateur = expéditeur de la tx de création (550 inconnus s
 - Ventes en échec : invisibles dans les logs. Sur Arc, 0 échec sur 300 reçus ; ailleurs non mesuré.
 - Impact sur la courbe Flap : non calculé (paramètres r, h, k lisibles via getTokenV8Safe, formule non implémentée ici).
 - BSC avant ~le 28/10 : le RPC public rend une liste vide sans erreur, l'archive exige un jeton. Trou signalé, pas comblé.
-- Genius.fun (BSC, né le 16/09, frais x2,3 en 7 j) : contrat non publié, introuvable sans explorateur à clé.
+- Genius.fun (BSC, né le 16/09, frais 7 j / 30 j : 2,30) : contrat non publié, introuvable sans explorateur à clé.
 - Solana (StonkFun, OTC, Sapling) et non-EVM (TON, Spark) : pas d'outil gratuit monté ici. Chiffres DefiLlama seulement.
 - Carte des 30 jours hors Arc, Flap et HyperSwap V2 : GeckoTerminal ne rend que ~3 jours de nouveaux pools. Le reste repose sur les volumes et frais DefiLlama, pas sur un comptage de pools.
 - Zero : testnet, RPC, ordre des transactions et DEX : rien de public au 31/10.
