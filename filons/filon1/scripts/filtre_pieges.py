@@ -224,7 +224,12 @@ def verif_flap(a):
     bt, stx = w(12), w(13)
     raisons = []
     # taxe + impact (impact médian mesuré sur Flap : 3,2 % à ~105 €, 10,8 % à ~420 €)
-    imp = 0.032 if a.mise <= 150 else (0.108 if a.mise >= 350 else 0.032 + (a.mise - 150) / 200 * 0.076)
+    if a.mise <= 105:
+        imp = 0.032 * a.mise / 105
+    elif a.mise <= 420:
+        imp = 0.032 + (a.mise - 105) / 315 * 0.076
+    else:
+        imp = 0.108 * a.mise / 420
     cout = 1 - (1 - 0.01 - bt / 1e4 - imp) * (1 - 0.01 - stx / 1e4 - imp)
     if cout > 0.08:
         raisons.append(f"coût de départ {cout:.0%} (taxe {bt / 100:.0f} % / {stx / 100:.0f} %, frais 1 %, impact ~{imp:.0%}) : "

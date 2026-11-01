@@ -10,6 +10,7 @@ Python 3.13, bibliothèque standard seulement, aucune clé. RPC dans `RPC_URL`. 
 | `mesure_v4.py` | Tous les pools Uniswap V4 d'une fenêtre : actifs, x5, x10, tenir 7 j, +60 %/120 s, retraits de LP, créateurs, usines | voir ci-dessous |
 | `mesure_v2.py` | Même chose pour une usine Uniswap V2 (Sync, Burn, Mint) | voir ci-dessous |
 | `mesure_flap.py` | Flap.sh (Portal BSC) : jetons créés, actifs, x5 sur la courbe, +60 %/120 s | voir ci-dessous |
+| `filtre_pieges.py` | Avant un achat : NO-GO si flotte, LP retirée, wallets neufs, coût de départ > 8 %, créateur en série | `RPC_URL=https://bsc-rpc.publicnode.com python filtre_pieges.py flap --token 0x… --mise 105` |
 | `verif_acheteurs_v4.py` | Premiers acheteurs d'un échantillon de pools V4 : payeur, routeur, nonce, revente | voir ci-dessous |
 
 Commandes utilisées le 31/10/2026 :

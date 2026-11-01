@@ -106,3 +106,6 @@ Limites communes : créateur = expéditeur de la tx de création (550 inconnus s
 - Frontier (Robinhood, pic le 29/10) : terrain couvert, non mesuré ici.
 - Genius.fun : 0 jeton « 6666 » créé sur BSC en 30 min le 31/10 vers 23:30 UTC (contrôle : 65 jetons Flap vus) ; contrat non identifié.
 - Frontier (Robinhood) : contrat introuvable (explorateur protégé par un anti-robot, signature CoinDeployed inconnue) ; non mesuré.
+
+## 6. Livré en plus (01/11) : filtre anti-piège avant achat
+`scripts/filtre_pieges.py` (V4, V2, Flap) bloque les pièges mesurés : sur 3 pièges prouvés, 3 NO-GO avec la bonne raison ; un jeton propre passe à 20 € (contrôle négatif). Il évite les pertes de piège, il ne rend pas ces lieux rentables : même filtré, le meilleur cas fait environ 0 € à 20 € et -6 € à 105 € par achat.

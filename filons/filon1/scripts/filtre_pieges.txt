@@ -1,0 +1,7 @@
+2026-11-01 06:37 | INCONNU | v4 0x7a0d6cacfbb527301f3e786c46761222dc23119c7065d4793545b15aba013669 | pool introuvable dans les 60000 derniers blocs (augmente --recul)
+2026-11-01 06:40 | INCONNU | v2 0x48795e50da4a6f9f1ab4e4944c379254845f1a6b | pas de liquidité ajoutée dans les 130000 derniers blocs (augmente --recul)
+2026-11-01 06:40 | NO-GO | v4 0x7a0d6cacfbb527301f3e786c46761222dc23119c7065d4793545b15aba013669 | LP retirée (rug) 722 blocs après la création ; flotte : 100% des 20 premiers achats passent par 1 contrat(s) privé(s) ; le contrat qui achète (0x934412cf…) est celui qui retire la LP
+2026-11-01 06:43 | NO-GO | v2 0x48795e50da4a6f9f1ab4e4944c379254845f1a6b | acheteurs = wallets neufs (nonce médian 1)
+2026-11-01 06:44 | NO-GO | flap 0x4ffb0c705e5e61ea07bb0793982f98c45e697777 | coût de départ 25% (taxe 9 % / 9 %, frais 1 %, impact ~3%) : il faut +33% juste pour revenir à zéro ; créateur en série : 30 jetons dans l'heure autour de celui-ci
+2026-11-01 06:45 | NO-GO | flap 0xcd56fbe23a7e04fc5ab5065d8c2a9852bf4d7777 | coût de départ 9% (taxe 0 % / 1 %, frais 1 %, impact ~3%) : il faut +10% juste pour revenir à zéro
+2026-11-01 06:46 | aucun piège détecté | flap 0xcd56fbe23a7e04fc5ab5065d8c2a9852bf4d7777 | 

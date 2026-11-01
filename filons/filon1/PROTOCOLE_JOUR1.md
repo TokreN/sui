@@ -18,6 +18,7 @@ Lancer la mesure sur la 1re heure de naissances, suivi 1 h. Lire, pour les pools
 4. Impact lu à 0,05 puis 0,2 ETH-équiv.
 
 ## Règle NO-GO (un seul critère suffit → on ne joue pas)
+Vérification automatique, jeton par jeton : `scripts/filtre_pieges.py` (v4, v2 ou flap) applique ces critères et répond NO-GO avec la raison.
 - LP retirée sur **> 30 %** des pools actifs (signature Arc : 76 %).
 - **>= 80 %** des premiers achats passent par **<= 2 contrats** (signature Arc/HyperEVM : flotte).
 - **Nonce médian** des premiers payeurs **< 20** (wallets neufs = flotte ; HyperEVM : nonce médian 1).

@@ -200,3 +200,9 @@ CHAUD si >= 3 x5 par jour pendant 3 jours, OU >= 50 lancements actifs par >= 10 
 - Vérifié sur le 29/10 18-21 h (jamais utilisé pour choisir) : x1,006 (sans top 3 x0,957), n=59. Sans filtre le même jour : x0,889.
 - Impact de ton propre achat, mesuré sur les vrais achats des 10 premières minutes : 3,2 % pour ~105 € (2 347 achats), 10,8 % pour ~420 € (212 achats), à l'achat et à la revente.
 - Net avec impact : x0,943 à 105 € (-6,0 € par achat) ; x0,800 à 420 € (-84 € par achat). Le filtre réduit la perte (-11,6 € -> -6 € à 105 €) mais ne rend pas rentable.
+
+## 06:46 (01/11) — Filtre anti-piège avant achat — `scripts/filtre_pieges.py`, tests dans `scripts/filtre_pieges.txt`
+- Carte blanche de Walid : livré un filtre à brancher sur les bots (V4, V2, Flap), données publiques, aucune clé. NO-GO si : LP retirée ; premiers achats via <= 2 contrats privés ; nonce médian >= 5 000 ou <= 2 ; contrat acheteur = contrat qui retire la LP ; coût de départ aller-retour > 8 % ; créateur Flap en série (>= 3 jetons/h).
+- Contrôles positifs (pièges prouvés) : Arc HALLOWEEN -> NO-GO (LP retirée à +722 blocs, 100 % des 20 premiers achats via 1 contrat privé, ce contrat retire la LP) ; HyperEVM KLEOS -> NO-GO (wallets neufs, nonce médian 1) ; Flap taxe 9 %/9 % -> NO-GO (coût 25 %, créateur à 30 jetons/h).
+- Cas propre (créateur nouveau, taxe <= 1 %) : NO-GO à 105 € (coût 9 % avec ton impact), « aucun piège détecté » à 20 €. Contrôle négatif OK : le filtre ne bloque pas tout.
+- Rentabilité attendue même après filtre (jour de contrôle, meilleur filtre) : 20 € -> environ -0,1 € par achat (sans top 3 : -1 €) ; 105 € -> -6 € ; 420 € -> -84 €. Le filtre évite les pièges, il ne crée pas de gain.
